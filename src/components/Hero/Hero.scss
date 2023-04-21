@@ -1,0 +1,33 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.hero {
+  @include padding-full;
+  padding-top: 100px;
+  padding-bottom: 125px;
+
+  display: flex;
+  gap: 100px;
+
+  background-image: url('../../images/hero-background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 80%;
+}
+
+// MEDIA QUERIES
+@media (max-width: 1020px) {
+  .hero {
+    gap: 70px;
+  }
+}
+
+@media (max-width: 990px) {
+  .hero {
+    flex-direction: column;
+    background-image: url('../../images/hero-background-mobile.svg');
+    background-position: center;
+    padding-top: 55px;
+    padding-bottom: 75px;
+  }
+}

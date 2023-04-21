@@ -1,0 +1,344 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+// HERO RIGHT
+.hero-right {
+  width: 50%;
+  @include flex-row-center;
+  gap: 14px;
+  overflow-x: hidden;
+}
+
+.hero-right-div {
+  width: 50%;
+}
+
+.hero-right-div:first-of-type {
+  @include flex-col;
+  gap: 5px;
+}
+
+.hero-right-div:last-of-type {
+  @include flex-col;
+  gap: 13px;
+}
+
+.search-engine,
+.digital-presence,
+.b2b-market,
+.engagements {
+  border-radius: 9px;
+  width: 100%;
+}
+
+// SEARCH ENGINE OPTIMIZATION
+.search-engine {
+  background-color: #1f2e5f;
+  min-height: 260px;
+  position: relative;
+  color: $white;
+  @include flex-col;
+  justify-content: flex-end;
+  padding: 25px;
+
+  p:first-of-type {
+    @include flex-row-center;
+    margin-bottom: 12px;
+    gap: 10px;
+    font-size: 11px;
+
+    span {
+      @include circleDiv($white, 20px);
+
+      svg {
+        font-size: small;
+        color: #1f2e5f;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: $regular-weight;
+  }
+}
+
+.seo-orange {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  z-index: 3;
+  transform: translate(50%, -50%);
+}
+
+.seo-last-div {
+  @include flex-col;
+  align-items: flex-end;
+
+  span {
+    margin-bottom: 8px;
+    font-size: x-small;
+  }
+
+  div {
+    height: 4px;
+    border-radius: 29px;
+    background-color: $white;
+    width: 100%;
+    position: relative;
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 4px;
+      background-color: #f84a23;
+      border-radius: 29px 0 0 29px;
+    }
+  }
+}
+
+// DIGITAL PRESENCE
+.digital-presence {
+  border-radius: 8.5px;
+  position: relative;
+  background-color: #637ee0;
+  min-height: 55px;
+  @include flex-row-center;
+  justify-content: space-between;
+  color: $white;
+  padding: 12px;
+}
+
+.digital-presence-left {
+  @include flex-row-center;
+  gap: 10px;
+
+  p {
+    font-size: x-small;
+  }
+
+  div {
+    @include circleDiv(#05123e, 30px);
+
+    svg {
+      color: $white;
+      font-size: smaller;
+    }
+  }
+}
+
+.digital-presence-right {
+  @include flex-row-center;
+  gap: 10px;
+
+  p {
+    font-size: x-small;
+  }
+
+  div {
+    @include circleDiv(#abb4d9, 20px);
+
+    svg {
+      color: $white;
+    }
+  }
+}
+
+.digital-presence-bottom-bar {
+  position: absolute;
+  background-color: #a0b1eb;
+  border-radius: 0 0 13.45px 13.45px;
+  width: 90%;
+  height: 8px;
+  left: 5%;
+  bottom: -8px;
+}
+
+// B2B MARKET
+.b2b-market {
+  background-image: url('../../images/b2b-imagge.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: calc(100%);
+
+  background-color: #e9e9e9;
+  min-height: 215px;
+  padding: 20px 16px;
+  padding-bottom: 0;
+
+  div {
+    @include flex-col;
+    justify-content: space-between;
+    min-height: 207px;
+    padding: 20px 5px 0;
+    border-radius: 4.5px 4.5px 0 0;
+    background: linear-gradient(
+      180deg,
+      rgba(17, 59, 206, 0.27) 5.62%,
+      rgba(217, 217, 217, 0.36) 100%
+    );
+
+    p:first-of-type {
+      color: #05123e;
+      font-size: small;
+    }
+
+    p:last-of-type {
+      font-size: 22px;
+      padding-bottom: 25px;
+      color: $white;
+    }
+  }
+}
+
+// TOTAL ENGAGEMENTS
+.engagements {
+  background-color: #4663c1;
+  position: relative;
+  min-height: 300px;
+  line-height: 1.5;
+  @include flex-col;
+  gap: 10px;
+
+  p {
+    font-size: smaller;
+    color: $white;
+    padding-left: 16px;
+    margin-top: 17px;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-weight: $regular-weight;
+    color: $white;
+    padding-left: 16px;
+  }
+}
+
+.engagements-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 40px);
+
+  div:first-of-type {
+    background-color: rgba(248, 74, 35, 0.5);
+    position: relative;
+    grid-row: 3/6;
+    border-bottom-left-radius: 9px;
+
+    &::before {
+      @include gridBar(#f84a23);
+    }
+  }
+
+  div:nth-last-of-type(3) {
+    background-color: rgba(220, 228, 255, 0.5);
+    grid-column: 2;
+    grid-row: 1/6;
+
+    position: relative;
+    &::before {
+      @include gridBar(#002fd8);
+    }
+  }
+
+  div:nth-last-of-type(2) {
+    background-color: rgba(149, 44, 21, 0.5);
+    grid-column: 3;
+    grid-row: 4/6;
+
+    position: relative;
+    &::before {
+      @include gridBar(#952c15);
+    }
+  }
+
+  div:last-of-type {
+    border-bottom-right-radius: 9px;
+    background-color: rgba(3, 12, 41, 0.4);
+    grid-column: 4;
+    grid-row: 2/6;
+
+    position: relative;
+    &::before {
+      @include gridBar(#030c29);
+    }
+  }
+}
+
+.engagements-lines {
+  position: absolute;
+  bottom: 40px;
+  left: 10%;
+  width: 80%;
+  @include flex-col;
+  gap: 40px;
+
+  div {
+    border: 0.747479px solid rgba(255, 255, 255, 0.21);
+  }
+}
+
+// MEDIA QUERIES
+@media (max-width: 990px) {
+  .hero-right {
+    width: 100%;
+  }
+
+  .search-engine {
+    min-height: 195px;
+    padding: 16px;
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .digital-presence {
+    min-height: 40px;
+  }
+
+  .b2b-market {
+    min-height: 175px;
+
+    div {
+      p {
+        font-size: small;
+      }
+
+      p:last-of-type {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .engagements {
+    min-height: 230px;
+
+    p {
+      font-size: 9px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  .engagements-grid {
+    grid-template-rows: repeat(5, 30px);
+  }
+
+  .engagements-lines {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-right {
+    gap: 7px;
+  }
+}

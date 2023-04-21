@@ -1,0 +1,75 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+// HERO LEFT
+.hero-left {
+  width: 50%;
+  @include flex-col;
+  justify-content: center;
+  gap: 40px;
+
+  h2 {
+    font-weight: $medium-weight;
+    font-size: 45px;
+    color: #263238;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  .get-started-btn {
+    width: max-content;
+    border: none;
+    background-color: #103acc;
+    color: $white;
+
+    div {
+      @include circleDiv($white, 25px);
+
+      svg {
+        color: #103acc;
+      }
+    }
+  }
+
+  p {
+    color: #263238;
+  }
+}
+
+.hero-left-explore {
+  margin-bottom: 10px;
+  @include flex-row-center;
+  gap: 20px;
+}
+
+.hero-left-explore-div {
+  @include flex-row-center;
+  gap: 6px;
+
+  div {
+    @include flex-row-center;
+  }
+}
+
+// MEDIA QUERIES
+@media (max-width: 990px) {
+  .hero-left {
+    width: 100%;
+    align-items: center;
+
+    h2 {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .hero-left-explore {
+      justify-content: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}

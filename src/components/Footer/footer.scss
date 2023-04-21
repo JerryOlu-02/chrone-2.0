@@ -1,0 +1,134 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.footer {
+  @include flex-row-center;
+  @include padding-full;
+  padding-top: 133px;
+  padding-bottom: 93px;
+  background-color: $dark-blue;
+  color: $white;
+
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  font-size: small;
+
+  section {
+    @include flex-col;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    width: 100%;
+    font-weight: $regular-weight;
+
+    h3 {
+      font-size: larger;
+      font-weight: $semi-bold-weight;
+    }
+  }
+}
+
+.contact-us-div {
+  @include flex-col;
+  border: solid 1px $white;
+  color: $white;
+  gap: 15px;
+  padding: 30px 40px;
+  width: 100%;
+}
+
+.footer-links {
+  @include flex-row-center;
+  justify-content: center;
+  gap: 20px;
+
+  a {
+    @include flex-row-center;
+    justify-content: center;
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $white;
+
+    svg {
+      font-size: larger;
+      color: $dark-blue;
+    }
+  }
+}
+
+.site-map-list {
+  @include flex-col;
+  gap: 20px;
+  list-style-type: none;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      @include linkHover($white, -4px);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.get-in-touch {
+  p:first-of-type {
+    text-align: left;
+  }
+}
+
+.email-div {
+  padding: 30px 10px;
+  width: 100%;
+  border: 1px solid $white;
+  @include flex-col;
+  align-items: flex-start;
+  gap: 15px;
+
+  div {
+    @include flex-col;
+    gap: 10px;
+    align-items: flex-start;
+    width: 100%;
+
+    input {
+      border: none;
+      height: 40px;
+      width: 100%;
+      border-radius: 20px;
+      padding-left: 20px;
+
+      &::placeholder {
+        color: $light-gray;
+        font-weight: $light-weight;
+      }
+    }
+  }
+
+  button {
+    color: $white;
+    background-color: transparent;
+    border-color: $white;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .get-in-touch {
+    p:first-of-type {
+      text-align: center;
+    }
+  }
+}

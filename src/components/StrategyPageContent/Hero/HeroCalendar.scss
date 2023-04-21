@@ -1,0 +1,142 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.hero-calendar-container {
+  box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.1);
+  background-color: $white;
+}
+
+.hero-calendar {
+  width: 100%;
+  display: flex;
+}
+
+.hero-calendar-left {
+  background-color: #141d3a;
+  color: $white;
+  width: 50%;
+  @include flex-col;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  padding: 40px 16px;
+
+  p {
+    font-size: 15px;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+.react-calendar {
+  width: 100%;
+}
+
+.react-calendar__navigation {
+  .react-calendar__navigation__label {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .react-calendar__navigation__prev-button {
+    margin-left: 10px;
+  }
+
+  .react-calendar__navigation__next-button {
+    margin-right: 10px;
+  }
+
+  button {
+    background-color: #141d3a;
+    border: none;
+  }
+}
+
+.react-calendar__tile {
+  cursor: pointer;
+  background-color: #141d3a;
+  padding: 10px;
+  border: none;
+  width: 41px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 10px;
+  @include flex-row-center;
+  @include transition(background-color);
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  @include flex-row-center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+
+  abbr {
+    text-decoration: none;
+    font-size: 10px;
+  }
+}
+
+.react-calendar__tile:disabled {
+  opacity: 0.5;
+}
+
+.react-calendar__tile--active {
+  background-color: $white;
+  color: #00155f;
+}
+
+.hero-calendar-right {
+  width: 50%;
+  background-color: $white;
+  position: relative;
+
+  .signin-button {
+    border-radius: 0;
+    background-color: $white;
+    color: #141d3a;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+  }
+}
+
+.hero-calendar-bottom {
+  width: 100%;
+  height: 43px;
+  background-color: $white;
+  @include flex-row-center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+
+  button {
+    background-color: $white;
+    border-radius: 0;
+    border: #141d3a 0.5px solid;
+    color: #141d3a;
+    min-height: 30px;
+  }
+}
+
+@media (max-width: 1055px) {
+  .hero-calendar-left {
+    width: 100%;
+  }
+
+  .hero-calendar-right {
+    width: 100%;
+    display: none;
+  }
+
+  .hero-calendar-left.hide-calendar {
+    display: none;
+  }
+
+  .hero-calendar-right.show-scheduleTime {
+    display: block;
+  }
+}

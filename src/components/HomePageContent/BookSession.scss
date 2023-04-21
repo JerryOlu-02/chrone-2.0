@@ -1,0 +1,99 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.book-session {
+  &::before {
+    @include linkHover(inherit, 0);
+    height: 100%;
+    transform: scaleX(1);
+    z-index: -1;
+
+    background: linear-gradient(
+        0deg,
+        rgba(17, 59, 206, 0.2),
+        rgba(17, 59, 206, 0.2)
+      ),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      rgba(0, 0, 0, 0.2);
+  }
+}
+
+.book-session {
+  @include padding-full;
+  @include flex-row-center;
+  justify-content: space-between;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+  background: url('../../images/book-session-background.png') no-repeat center;
+
+  div {
+    @include flex-col;
+    gap: 20px;
+    align-items: flex-start;
+    color: $white;
+    width: 50%;
+
+    h2 {
+      font-size: 38px;
+      font-weight: $medium-weight;
+
+      span {
+        color: #e45f31;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    button {
+      border-color: $white;
+      border-width: 1.5px;
+      color: $white;
+      background-color: transparent;
+
+      div {
+        @include circleDiv($white, 27px);
+
+        svg {
+          color: #1d2643;
+          font-size: medium;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .book-session {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    flex-direction: column;
+    gap: 35px;
+
+    div {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 645px) {
+  .book-session {
+    div {
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+}

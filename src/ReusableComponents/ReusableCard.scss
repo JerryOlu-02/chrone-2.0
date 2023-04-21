@@ -1,0 +1,44 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.reusable-card {
+  background-color: #141d3a;
+  @include padding-full;
+  padding: 80px 25%;
+  @include flex-col;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 52px;
+
+  h2 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: $regular-weight;
+
+    span {
+      color: #f6441d;
+    }
+  }
+
+  button {
+    border: none;
+    background-color: #e7ebfa;
+    color: #00155f;
+    width: max-content;
+  }
+}
+
+@media (max-width: 900px) {
+  .reusable-card {
+    h2 {
+      font-size: 24px;
+      font-weight: $light-weight;
+    }
+  }
+}
+
+@media (min-width: 715px) {
+  .reusable-card {
+    padding: 80px 25%;
+  }
+}

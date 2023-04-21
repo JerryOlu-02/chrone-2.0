@@ -1,0 +1,87 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.hero-strategy {
+  @include padding-full;
+  padding-top: 120px;
+  padding-bottom: 200px;
+
+  @include flex-row-center;
+  gap: 90px;
+
+  background-image: url('../../../images/hero-strategy-background.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// HERO STRATEGY LEFT
+.hero-strategy-left {
+  @include flex-col;
+  width: 50%;
+  gap: 30px;
+  color: #414141;
+
+  h2 {
+    font-size: 58px;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  button {
+    background-color: #103acc;
+    border: none;
+    width: max-content;
+    color: $white;
+
+    div {
+      @include circleDiv(#e7ebfa, 27px);
+
+      svg {
+        color: #103acc;
+      }
+    }
+  }
+}
+
+// HERO STRATEGY RIGHT
+.hero-strategy-right {
+  width: 50%;
+}
+
+@media (max-width: 1055px) {
+  .hero-strategy {
+    flex-direction: column;
+  }
+
+  .hero-strategy-left {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-strategy-right {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-strategy-right {
+    width: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero-strategy-left {
+    h2 {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 535px) {
+  .hero-strategy-right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,129 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.schedule-time-form {
+  background-color: $white;
+  box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.2);
+  padding: 35px 30px 20px;
+  color: #263238;
+  @include flex-col;
+  gap: 20px;
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .time-info {
+    margin-top: 15px;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      margin-left: 5px;
+      color: $orange;
+    }
+  }
+
+  form {
+    font-size: 14px;
+    @include flex-col;
+    gap: 20px;
+
+    label {
+      font-weight: $medium-weight;
+    }
+
+    input {
+      height: 34px;
+      padding-left: 10px;
+      border: 0.5px solid rgba(0, 0, 0, 0.5);
+      border-radius: 2px;
+      background-color: #f2f4fb;
+      @include transition(border);
+
+      &:focus {
+        outline: none;
+        border: 1.5px solid #04c1c2;
+      }
+    }
+  }
+}
+
+.name-div {
+  @include flex-row-center;
+  gap: 8px;
+
+  div {
+    width: 50%;
+    @include flex-col;
+    gap: 8px;
+  }
+}
+
+.phone-email-div {
+  @include flex-col;
+  gap: 8px;
+}
+
+.data-privacy {
+  @include flex-col;
+  gap: 15px;
+
+  .data-privacy-header {
+    font-size: 20px;
+    font-weight: $medium-weight;
+  }
+}
+
+.data-privacy-div {
+  background-color: #e7ebfa;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  padding: 14px;
+  font-size: 10px;
+  @include flex-col;
+  gap: 10px;
+
+  div {
+    @include flex-row-center;
+    gap: 8px;
+
+    input {
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      border: solid 0.5px #ababab;
+      position: relative;
+      cursor: pointer;
+
+      &:checked {
+        background-image: url('../../../images/checked.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.form-button-div {
+  @include flex-row-center;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    border-radius: 2px;
+  }
+
+  button:first-of-type {
+    background-color: $white;
+    border-color: #263238;
+    color: #263238;
+  }
+
+  button:last-of-type:disabled {
+    background-color: #a0b1eb;
+  }
+}

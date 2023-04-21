@@ -1,0 +1,84 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.schedule-time {
+  @include flex-col;
+  padding: 30px 25px 0;
+  gap: 25px;
+  font-size: 15px;
+  color: #263238;
+}
+
+.timelength-list {
+  @include flex-row-center;
+  margin-top: 10px;
+
+  div {
+    @include flex-row-center;
+    cursor: pointer;
+    justify-content: center;
+    background-color: rgba(244, 244, 244, 0.5);
+    color: #5a5a5a;
+    border: 0.3px solid rgba(0, 0, 0, 0.3);
+    font-size: 10px;
+    width: 100%;
+    height: 22px;
+    @include transition(background-color border);
+  }
+
+  .active-timelength {
+    background-color: #e7ebfa;
+    border-width: 1px;
+    border-color: #103acc;
+  }
+}
+
+.schedule-time-two {
+  font-size: 13px;
+}
+
+.utc-time {
+  color: #d75023;
+}
+
+.timeframe-list {
+  @include flex-col;
+  gap: 8px;
+  height: 100%;
+  margin-top: 8px;
+  height: 18rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    width: 5px;
+    height: 5px;
+    border-radius: 16px;
+    background-color: $white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    appearance: none;
+    cursor: pointer;
+    background-color: #7b7b7b;
+    border-radius: 16px;
+    width: 5px;
+  }
+
+  div {
+    cursor: pointer;
+    @include flex-row-center;
+    justify-content: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    min-height: 42px;
+    width: 95%;
+    @include transition(background-color border);
+  }
+
+  .active-timeframe {
+    background-color: #e7ebfa;
+    border-width: 1.5px;
+    border-color: #103acc;
+  }
+}

@@ -1,0 +1,151 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.last-section {
+  @include padding-full;
+  padding-top: 110px;
+  padding-bottom: 140px;
+  background-color: $white;
+  @include flex-col;
+  gap: 120px;
+}
+
+.last-section-one {
+  // @include flex-row-center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  column-gap: 120px;
+  row-gap: 60px;
+}
+
+.last-section-one-div:first-of-type {
+  @include flex-col;
+  justify-content: center;
+  gap: 30px;
+
+  h2 {
+    font-size: 38px;
+    color: #263238;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  p {
+    color: #414141;
+  }
+
+  a {
+    width: max-content;
+    position: relative;
+    text-decoration: none;
+    color: #011f8a;
+
+    &::before {
+      @include linkHover(#011f8a, -4px);
+      transform: scaleX(1);
+    }
+  }
+}
+
+.last-section-one-div:last-of-type {
+  @include flex-row-center;
+  justify-content: flex-end;
+  width: 100%;
+
+  img {
+    object-fit: fill;
+    border-radius: 65px 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .last-section-one {
+    column-gap: 30px;
+  }
+
+  .last-section-one-div:first-of-type {
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  .last-section-one-div:last-of-type {
+    img {
+      max-height: 420px;
+    }
+  }
+}
+
+@media (max-width: 816px) {
+  .last-section-one-div:first-of-type {
+    grid-row: 2;
+  }
+
+  .last-section-one-div:last-of-type {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .last-section-one {
+    @include flex-col;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+}
+
+// LAST SECTION TWO
+.last-section-two {
+  padding: 100px 150px;
+  background-color: #e7ebfa;
+
+  @include flex-col;
+  gap: 60px;
+  align-items: flex-start;
+
+  h2 {
+    font-size: 38px;
+    color: #263238;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    button {
+      border: none;
+      color: $white;
+      background-color: #141d3a;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .last-section-two {
+    padding: 100px 10%;
+  }
+}
+
+@media (max-width: 640px) {
+  .last-section-two {
+    padding: 80px 10%;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.services-we-offer {
+  @include padding-full;
+  background-color: #e7ebfa;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  @include flex-col;
+  gap: 55px;
+  align-items: flex-start;
+  color: #263238;
+
+  background-image: url('../../images/services-we-offerobackground.svg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+
+  h2 {
+    font-size: 54px;
+
+    span {
+      color: $orange;
+    }
+  }
+}
+
+.services-we-offer-container {
+  @include flex-row-center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 110px 75px;
+  justify-content: space-between;
+  gap: 100px;
+  background-color: #f5f5ff;
+  border-radius: 20px;
+
+  filter: drop-shadow(0px 9px 64px rgba(1, 37, 138, 0.12));
+}
+
+.services-we-offer-div {
+  @include flex-col;
+  text-align: center;
+  gap: 35px;
+
+  h4 {
+    font-size: 20px;
+  }
+
+  div {
+    @include flex-col;
+    align-items: center;
+    gap: 12px;
+
+    p {
+      width: max-content;
+      position: relative;
+      font-weight: $regular-weight;
+      opacity: 0.9;
+
+      &::before {
+        @include linkHover(rgba($color: #263238, $alpha: 0.9), -1px);
+        transform: scaleX(1);
+        height: 1px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1085px) {
+  .services-we-offer-container {
+    padding: 75px 50px;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 955px) {
+  .services-we-offer {
+    align-items: center;
+    background-image: url('../../images/services-we-offerobackground-mobile.svg');
+
+    h2 {
+      width: 90%;
+      text-align: center;
+      font-size: 38px;
+    }
+  }
+
+  .services-we-offer-container {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-we-offer-div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .services-we-offer {
+    padding: 35px 40px 65px;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  .services-we-offer-container {
+    width: 100%;
+    min-height: 100%;
+    padding: 35px 20px 65px;
+  }
+
+  .services-we-offer-div {
+    h4 {
+      font-size: 18px;
+    }
+
+    div {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
