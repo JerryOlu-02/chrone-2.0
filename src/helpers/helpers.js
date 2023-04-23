@@ -14,3 +14,25 @@ export const time = [
   '15:30',
   '16:00',
 ];
+
+export const eventBody = function (firstName, lastName, startDate, endDate) {
+  return {
+    summary: `Scheduled Meeting of ${firstName} ${lastName} with Chrone Influitive Company`,
+    description: 'More Insight on your marketing needs',
+    start: {
+      dateTime: startDate,
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    },
+    end: {
+      dateTime: endDate,
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    },
+    reminders: {
+      useDefault: false,
+      overrides: [
+        { method: 'email', minutes: 24 * 60 },
+        { method: 'popup', minutes: 10 },
+      ],
+    },
+  };
+};

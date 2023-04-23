@@ -8,7 +8,6 @@ import ScheduleTimeForm from './components/StrategyPageContent/Hero/ScheduleTime
 import ScheduleSuccess from './components/StrategyPageContent/Hero/ScheduleSuccess';
 
 const App = function () {
-  console.log(process.env.REACT_APP_SUPABASE_PRIVATE_KEY);
   const router = createBrowserRouter([
     {
       path: '/',

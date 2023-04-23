@@ -35,6 +35,27 @@ const calendarFormSlice = createSlice({
     setTime(state, action) {
       state.timePicked = action.payload;
     },
+
+    setFormContent(state, action) {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
+
+    resetFormContent() {
+      return {
+        activeTimeLength: -1,
+        activeTimeFrame: -1,
+        datePicked: '',
+        timeLengthPicked: '',
+        timePicked: '',
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        emailAddress: '',
+      };
+    },
   },
 });
 
@@ -45,4 +66,6 @@ export const {
   setTime,
   setActiveTimeFrame,
   setActiveTimeLength,
+  setFormContent,
+  resetFormContent,
 } = calendarFormSlice.actions;

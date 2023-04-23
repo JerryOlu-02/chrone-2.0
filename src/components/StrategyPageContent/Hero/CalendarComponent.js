@@ -6,11 +6,11 @@ import { setDate } from '../../../store';
 const CalendarComponent = function ({ handleClick }) {
   const dispatch = useDispatch();
 
-  const data = useSelector(({ calendar: { datePicked } }) => {
-    return datePicked;
+  const { datePicked } = useSelector(({ calendar: { datePicked } }) => {
+    return { datePicked };
   });
 
-  const [value, onChange] = useState(data);
+  const [value, onChange] = useState(datePicked);
 
   const handleClickedDay = function (value) {
     // Toggle active calendar class

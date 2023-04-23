@@ -5,7 +5,11 @@ import CalendarLogo from '../../../images/calendarlogo.png';
 import { useCalendarData } from '../../../hooks/use-calendar-data';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../../ReusableComponents/Button';
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import {
+  useSession,
+  useSupabaseClient,
+  useSessionContext,
+} from '@supabase/auth-helpers-react';
 import { useState } from 'react';
 
 const HeroCalendar = function () {
@@ -13,6 +17,7 @@ const HeroCalendar = function () {
 
   const session = useSession(); // tokens, when session exists we have a user
   const supabase = useSupabaseClient(); // talk to supabase
+  const { isLoading } = useSessionContext();
 
   const navigate = useNavigate();
   // GET data from stor with use-calendar hook
@@ -47,6 +52,10 @@ const HeroCalendar = function () {
   const toggleCalendarClass = function () {
     setShowScheduleTime(!showScheduleTime);
   };
+
+  if (isLoading) {
+    return <></>;
+  }
 
   return (
     <div className="hero-calendar-container">

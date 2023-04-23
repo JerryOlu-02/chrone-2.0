@@ -51,18 +51,27 @@
 
 .name-div {
   @include flex-row-center;
+  align-items: flex-start;
   gap: 8px;
 
   div {
     width: 50%;
     @include flex-col;
     gap: 8px;
+
+    span {
+      color: $orange;
+    }
   }
 }
 
 .phone-email-div {
   @include flex-col;
   gap: 8px;
+
+  span {
+    color: $orange;
+  }
 }
 
 .data-privacy {
@@ -125,5 +134,25 @@
 
   button:last-of-type:disabled {
     background-color: #a0b1eb;
+  }
+}
+
+@media (max-width: 1055px) {
+  .schedule-time-form {
+    align-items: center;
+    padding: 35px 16px 10px;
+
+    h4,
+    .time-info {
+      text-align: center;
+    }
+  }
+
+  .name-div {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+    }
   }
 }
