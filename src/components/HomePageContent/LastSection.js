@@ -25,6 +25,10 @@ const LastSection = function () {
 
         <div className="last-section-one-div">
           <img src={WomanImage} alt="woman__image" />
+
+          <div className="creativity">Creativity</div>
+          <div className="strategy">Strategy</div>
+          <div className="results">Positive Results</div>
         </div>
       </div>
 

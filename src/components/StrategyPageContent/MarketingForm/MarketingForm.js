@@ -1,11 +1,24 @@
 import Button from '../../../ReusableComponents/Button';
+import Modal from '../../../ReusableComponents/Modal';
 import './MarketingForm.scss';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
+import { useState } from 'react';
 
 const MarkertingForm = function () {
+  // Modal Render
+  const [content, setContent] = useState(null);
+
+  const [loading, setLoading] = useState(false);
+
+  // Hide Modal
+  const handleClose = function () {
+    setContent(null);
+  };
+
+  // Yup Validiation scheme
   const validationSchema = yup.object({
     fullName: yup.string().required(),
     businessName: yup.string().required(),
@@ -14,26 +27,68 @@ const MarkertingForm = function () {
     problemsFaced: yup.string(),
   });
 
+  // React hook form (form control)
   const {
     handleSubmit,
     register,
     formState: { errors },
+    reset,
   } = useForm({ resolver: yupResolver(validationSchema) });
 
+  // HANDLE submission request
   const onSubmit = async function (data) {
-    const response = await axios.post('https://formspree.io/f/mknakdyk', data, {
-      headers: {
-        Accept: 'application/json',
-      },
-    });
+    try {
+      setLoading(true);
 
-    if (response.status === 200) {
-    } else {
+      // POST data to formspree
+      const response = await axios.post(
+        'https://formspree.io/f/mknakdyk',
+        data,
+        {
+          headers: {
+            Accept: 'application/json',
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setLoading(false);
+
+        // Show Modal
+        setContent(
+          <Modal
+            success
+            message="Your form has been submitted successfully"
+            onClose={handleClose}
+          />
+        );
+
+        reset();
+
+        // Remove Modal after 5 seconds
+        setTimeout(() => {
+          setContent(null);
+        }, 10000);
+      }
+    } catch (error) {
+      setLoading(false);
+
+      // Show Modal
+      setContent(<Modal message={error.message} onClose={handleClose} />);
+
+      // Clear form inputs
+      reset();
+
+      // Remove modal after 5 seconds
+      setTimeout(() => {
+        setContent(null);
+      }, 10000);
     }
   };
 
   return (
     <section className="mini-marketing-plan">
+      {content}
       <form className="marketing-form" onSubmit={handleSubmit(onSubmit)}>
         <h2>Mini Marketing plans</h2>
 
@@ -123,7 +178,7 @@ const MarkertingForm = function () {
           ></textarea>
         </div>
 
-        <Button>Submit Form</Button>
+        <Button loading={loading}>Submit Form</Button>
       </form>
     </section>
   );

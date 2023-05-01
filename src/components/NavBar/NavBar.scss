@@ -27,6 +27,19 @@
   }
 }
 
+.navbar.fixed {
+  background-color: $white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 40000000000000;
+
+  &::before {
+    bottom: 0;
+  }
+}
+
 .navbar-logo {
   // width: 283px;
   // height: 108px;
@@ -97,7 +110,7 @@
   .menu-bar {
     position: relative;
     @include flex-col;
-    height: 16px;
+    height: 20px;
     gap: 5px;
     width: 30px;
 

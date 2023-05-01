@@ -29,19 +29,39 @@
   @include flex-row-center;
   align-items: flex-start;
   width: 100%;
-  padding: 110px 75px;
   justify-content: space-between;
-  gap: 100px;
-  background-color: #f5f5ff;
-  border-radius: 20px;
+  gap: 48px;
 
   filter: drop-shadow(0px 9px 64px rgba(1, 37, 138, 0.12));
 }
 
 .services-we-offer-div {
   @include flex-col;
-  text-align: center;
+  background-color: #141d3a;
+  border-radius: 13px;
+  color: $white;
+  min-height: 460px;
+  padding: 65px 33px;
+  align-items: flex-start;
   gap: 35px;
+
+  p {
+    font-size: 14px;
+    font-weight: $light-weight;
+  }
+
+  a {
+    text-decoration: none;
+    color: #141d3a;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    border-radius: 0;
+    background-color: $white;
+    color: #141d3a;
+  }
 
   h4 {
     font-size: 20px;
@@ -49,19 +69,19 @@
 
   div {
     @include flex-col;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
+    width: 100%;
 
     p {
+      @include flex-row-center;
+      gap: 15px;
       width: max-content;
-      position: relative;
-      font-weight: $regular-weight;
-      opacity: 0.9;
 
-      &::before {
-        @include linkHover(rgba($color: #263238, $alpha: 0.9), -1px);
-        transform: scaleX(1);
-        height: 1px;
+      svg {
+        path {
+          fill: $white;
+        }
       }
     }
   }
@@ -69,12 +89,11 @@
 
 @media (max-width: 1085px) {
   .services-we-offer-container {
-    padding: 75px 50px;
-    gap: 60px;
+    gap: 25px;
   }
 }
 
-@media (max-width: 955px) {
+@media (max-width: 980px) {
   .services-we-offer {
     align-items: center;
     background-image: url('../../images/services-we-offerobackground-mobile.svg');
@@ -109,7 +128,6 @@
   .services-we-offer-container {
     width: 100%;
     min-height: 100%;
-    padding: 35px 20px 65px;
   }
 
   .services-we-offer-div {
@@ -119,7 +137,7 @@
 
     div {
       p {
-        font-size: 16px;
+        font-size: 12px;
       }
     }
   }

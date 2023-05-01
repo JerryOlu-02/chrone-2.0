@@ -37,7 +37,7 @@
 
     div {
       @include circleDiv(#e7ebfa, 27px);
-      animation: moves 0.6s infinite forwards;
+      animation: movesFoward 0.6s infinite forwards;
 
       svg {
         color: #103acc;
@@ -46,13 +46,23 @@
   }
 }
 
-@keyframes moves {
+@keyframes movesFoward {
   0% {
     transform: translateX(0%);
   }
 
   100% {
     transform: translateX(20%);
+  }
+}
+
+@keyframes movesDown {
+  0% {
+    transform: translateY(-5%);
+  }
+
+  100% {
+    transform: translateY(5%);
   }
 }
 
@@ -70,6 +80,16 @@
     width: 100%;
     align-items: center;
     text-align: center;
+
+    button {
+      div {
+        animation: movesDown 0.6s infinite forwards;
+
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
   }
 
   .hero-strategy-right {

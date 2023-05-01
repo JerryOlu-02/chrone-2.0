@@ -53,11 +53,41 @@
   @include flex-row-center;
   justify-content: flex-end;
   width: 100%;
+  position: relative;
 
   img {
     object-fit: fill;
     border-radius: 65px 0;
     width: 100%;
+  }
+
+  div {
+    position: absolute;
+    padding: 12px 30px;
+    border-radius: 95px;
+    color: $white;
+    font-size: 24px;
+    background: linear-gradient(
+      95.97deg,
+      rgba(239, 239, 239, 0.6) 5.99%,
+      rgba(239, 239, 239, 0.1) 89.63%
+    );
+    backdrop-filter: blur(25px);
+  }
+
+  .creativity {
+    top: 10%;
+    left: 15%;
+  }
+
+  .strategy {
+    right: 2%;
+    top: 50%;
+  }
+
+  .results {
+    left: 5%;
+    top: 85%;
   }
 }
 
@@ -79,6 +109,21 @@
     img {
       max-height: 420px;
     }
+
+    div {
+      font-size: 14px;
+      padding: 7px 10px;
+      border-radius: 55px;
+    }
+  }
+}
+
+@media (max-width: 1110px) {
+  .last-section-one-div:last-of-type {
+    div {
+      font-size: 14px;
+      border-radius: 55px;
+    }
   }
 }
 
@@ -91,8 +136,24 @@
     display: flex;
     justify-content: center;
 
+    div {
+      padding: 7px 10px;
+    }
+
     img {
       width: 80%;
+    }
+
+    .creativity {
+      left: 20%;
+    }
+
+    .strategy {
+      right: 12%;
+    }
+
+    .results {
+      left: 15%;
     }
   }
 }

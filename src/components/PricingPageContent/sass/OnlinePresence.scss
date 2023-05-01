@@ -6,6 +6,11 @@
   justify-content: space-between;
   padding-top: 100px;
   gap: 200px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -18,11 +23,6 @@
 
     h2 {
       font-size: 24px;
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
     }
   }
 }

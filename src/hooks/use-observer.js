@@ -2,15 +2,13 @@ import { useState, useMemo, useEffect } from 'react';
 
 export const useObserver = function (elementRef, rootElement) {
   const [isTouching, setIsTouching] = useState(null);
-  const [observerEntry, setObserverEntry] = useState(null);
 
   const observerHandler = function (entries, observe) {
     const [entry] = entries;
 
-    if (!entry.isIntersecting) return;
+    if (entry.isIntersecting) setIsTouching(entry.isIntersecting);
 
-    setIsTouching(entry.isIntersecting);
-    setObserverEntry(entry);
+    return;
   };
 
   const options = useMemo(() => {
@@ -24,12 +22,14 @@ export const useObserver = function (elementRef, rootElement) {
     const observer = new IntersectionObserver(observerHandler, options);
     const target = elementRef.current;
 
-    if (target) observer.observe(target);
+    if (!target) return;
+
+    observer.observe(target);
 
     return () => {
       observer.unobserve(target);
     };
   }, [options, elementRef]);
 
-  return [observerEntry, isTouching];
+  return { isTouching };
 };

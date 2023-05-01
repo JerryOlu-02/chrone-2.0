@@ -1,3 +1,6 @@
+import Button from '../../ReusableComponents/Button';
+import { Link } from 'react-router-dom';
+import { ReactComponent as CheckMark } from '../../images/check-mark.svg';
 import './ServicesWeOffer.scss';
 
 const ServicesWeOffer = function () {
@@ -9,37 +12,106 @@ const ServicesWeOffer = function () {
 
       <div className="services-we-offer-container">
         <div className="services-we-offer-div">
-          <h4>MARKETING STRATEGY</h4>
+          <h4>Marketing Strategy</h4>
+
+          <p>
+            Helpful for larger businesses or those that are looking to scale
+            their business.
+          </p>
+
+          <Link to="/pricing">
+            <Button>View plans</Button>
+          </Link>
 
           <div>
-            <p>Content Calender</p>
-            <p>Marketing Plan & Strategy</p>
-            <p>Community Management</p>
-            <p>Consultancy</p>
-            <p>Creative Strategy</p>
+            <p>
+              <CheckMark />
+              Content Calender
+            </p>
+            <p>
+              <CheckMark />
+              Marketing Plan & Strategy
+            </p>
+            <p>
+              <CheckMark />
+              Community Management
+            </p>
+            <p>
+              <CheckMark />
+              Consultancy
+            </p>
+            <p>
+              <CheckMark />
+              Creative Strategy
+            </p>
           </div>
         </div>
 
         <div className="services-we-offer-div">
-          <h4>DIGITAL MARKETING</h4>
+          <h4>Digital Marketing</h4>
+
+          <p>
+            Helpful for larger businesses or those that are looking to scale
+            their business.
+          </p>
+
+          <Link to="/pricing">
+            <Button>View plans</Button>
+          </Link>
 
           <div>
-            <p>Social Media Advertisement</p>
-            <p>Search Engine Optimization</p>
-            <p>Content Creation</p>
-            <p>Email Marketing</p>
-            <p>Pay Per Click Advertisement</p>
-            <p>SMS Marketing</p>
+            <p>
+              <CheckMark />
+              Social Media Advertisement
+            </p>
+            <p>
+              <CheckMark />
+              Search Engine Optimization
+            </p>
+            <p>
+              <CheckMark />
+              Content Creation
+            </p>
+            <p>
+              <CheckMark />
+              Email Marketing
+            </p>
+            <p>
+              <CheckMark />
+              Pay Per Click Advertisement
+            </p>
+            <p>
+              <CheckMark />
+              SMS Marketing
+            </p>
           </div>
         </div>
 
         <div className="services-we-offer-div">
-          <h4>DESIGN & DEVELOPMENT</h4>
+          <h4>Design & Development</h4>
+
+          <p>
+            Helpful for larger businesses or those that are looking to scale
+            their business.
+          </p>
+
+          <Link to="/pricing">
+            <Button>View plans</Button>
+          </Link>
 
           <div>
-            <p>Website Development</p>
-            <p>Website Design</p>
-            <p>E-commerce </p>
+            <p>
+              <CheckMark />
+              Website Development
+            </p>
+            <p>
+              <CheckMark />
+              Website Design
+            </p>
+            <p>
+              <CheckMark />
+              E-commerce
+            </p>
           </div>
         </div>
       </div>

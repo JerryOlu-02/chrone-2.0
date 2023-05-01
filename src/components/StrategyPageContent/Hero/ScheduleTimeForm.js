@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useCalendarData } from '../../../hooks/use-calendar-data';
 import Button from '../../../ReusableComponents/Button';
+import Modal from '../../../ReusableComponents/Modal';
 import { useForm } from 'react-hook-form';
-import { setFormContent, useCreateNewEventMutation } from '../../../store';
+import { setFormContent } from '../../../store';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import './ScheduleTimeForm.scss';
@@ -10,14 +11,20 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { eventBody } from '../../../helpers/helpers';
 import { useSession } from '@supabase/auth-helpers-react';
 import axios from 'axios';
+import { useState } from 'react';
 
 const ScheduleTimeForm = function () {
+  const [modal, setModal] = useState(null);
+
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   const session = useSession();
 
+  // GET data from redux state with useCalendar data hook
   const { timePicked, datePicked } = useCalendarData();
 
   // Change Start Date Format to Google Calendar Accepted Format
@@ -31,6 +38,7 @@ const ScheduleTimeForm = function () {
   // Change End Date Format to Google Calendar Accepted Format
   const endDate = new Date(`${datePicked} ${endTimePicked}`).toISOString();
 
+  // Yup Validiation scheme
   const validationSchema = yup.object({
     firstName: yup.string().required(),
     lastName: yup.string(),
@@ -38,40 +46,58 @@ const ScheduleTimeForm = function () {
     phoneNumber: yup.string().required(),
   });
 
+  // react hook form (form control)
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm({ resolver: yupResolver(validationSchema) });
 
+  // Handle Creation of Event on Google Calendar
   const onSubmit = async function (formData) {
-    dispatch(setFormContent(formData));
+    try {
+      setLoading(true);
 
-    const event = eventBody(currentDate, endDate);
+      // send data gotten from form to redux state
+      dispatch(setFormContent(formData));
 
-    // POST event to google calendar
-    const response = await axios.post(
-      'https://www.googleapis.com/calendar/v3/calendars/primary/events',
-      JSON.stringify(event),
-      {
-        headers: {
-          Authorization: `Bearer ${session.provider_token}`,
-        },
-        params: {
-          conferenceDataVersion: 1,
-        },
+      // get event object to be sent to google
+      // eventBody returns an object which contains the required parameters Google needs
+      const event = eventBody(currentDate, endDate);
+
+      // POST event to google calendar
+      const response = await axios.post(
+        'https://www.googleapis.com/calendar/v3/calendars/primary/events',
+        JSON.stringify(event),
+        {
+          headers: {
+            Authorization: `Bearer ${session.provider_token}`,
+          },
+          params: {
+            conferenceDataVersion: 1,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setLoading(false);
+
+        navigate('/strategy/success');
       }
-    );
+    } catch (error) {
+      setLoading(false);
 
-    if (response.status === 200) {
-      navigate('/strategy/success');
-    } else {
-      // Render error component
+      setModal(<Modal message={error.message} />);
+
+      setTimeout(() => {
+        setModal(null);
+      }, 10000);
     }
   };
 
   return (
     <div className="schedule-time-form">
+      {modal}
       <div>
         <h4>Your information</h4>
         <p className="time-info">
@@ -131,7 +157,7 @@ const ScheduleTimeForm = function () {
             <Button>Back</Button>
           </Link>
 
-          <Button>Confirm</Button>
+          <Button loading={loading}>Confirm</Button>
         </div>
       </form>
     </div>

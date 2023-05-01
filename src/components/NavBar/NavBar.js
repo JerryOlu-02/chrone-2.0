@@ -3,9 +3,14 @@ import './NavBar.scss';
 import { NavLink, Link } from 'react-router-dom';
 import Button from '../../ReusableComponents/Button';
 import { useState, useRef, useEffect } from 'react';
+import { useObserver } from '../../hooks/use-observer';
 
 const NavBar = function () {
   const navbarRef = useRef();
+
+  // const { isTouching } = useObserver(navbarRef, null);
+  // console.log(isTouching);
+
   const [showNav, setShowNav] = useState(false);
 
   const handleShowNav = function () {
@@ -33,8 +38,10 @@ const NavBar = function () {
   const activeNav = showNav ? 'active' : '';
 
   return (
-    <nav className="navbar">
-      <img className="navbar-logo" src={ChroneLogo} alt="chrone__logo" />
+    <nav className={`navbar`}>
+      <Link to="/">
+        <img className="navbar-logo" src={ChroneLogo} alt="chrone__logo" />
+      </Link>
 
       <ul ref={navbarRef} className={`nav-list ${activeNav}`}>
         <div>

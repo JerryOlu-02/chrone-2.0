@@ -69,6 +69,8 @@
   }
 
   aside {
+    direction: ltr;
+
     div {
       @include flex-col;
       gap: 10px;

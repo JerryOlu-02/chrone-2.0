@@ -1,9 +1,10 @@
 import '../sass/Button.scss';
+import { ImSpinner2 } from 'react-icons/im';
 
-const Button = function ({ children, className, ...rest }) {
+const Button = function ({ children, className, loading, ...rest }) {
   return (
     <button className={`reusable-button ${className}`} {...rest}>
-      {children}
+      {loading ? <ImSpinner2 className="spinner" /> : children}
     </button>
   );
 };
