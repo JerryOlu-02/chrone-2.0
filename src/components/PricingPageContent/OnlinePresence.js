@@ -1,5 +1,6 @@
 import ReusableCard from '../../ReusableComponents/ReusableCard';
 import Button from '../../ReusableComponents/Button';
+import { Link } from 'react-router-dom';
 import { ReactComponent as CallIcon } from '../../images/call-icon.svg';
 import '../StrategyPageContent/LastContainer.scss';
 import './sass/OnlinePresence.scss';
@@ -24,9 +25,11 @@ const OnlinePresence = function () {
           to the next level!
         </h2>
 
-        <Button style={{ backgroundColor: '#FFFFFF', color: '#141D3A' }}>
-          Schedule demo
-        </Button>
+        <Link to="/strategy">
+          <Button style={{ backgroundColor: '#FFFFFF', color: '#141D3A' }}>
+            Schedule demo
+          </Button>
+        </Link>
       </ReusableCard>
 
       <div className="online-presence">

@@ -65,7 +65,7 @@ const NavBar = function () {
           </li>
         </div>
 
-        <Link className="button-link">
+        <Link to="/strategy" className="button-link">
           <Button className="nav-button">Request a demo</Button>
         </Link>
       </ul>

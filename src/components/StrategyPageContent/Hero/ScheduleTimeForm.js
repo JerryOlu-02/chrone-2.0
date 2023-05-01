@@ -9,17 +9,16 @@ import './ScheduleTimeForm.scss';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { eventBody } from '../../../helpers/helpers';
 import { useSession } from '@supabase/auth-helpers-react';
+import axios from 'axios';
 
 const ScheduleTimeForm = function () {
-  const [createEvent, results] = useCreateNewEventMutation();
-
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   const session = useSession();
 
-  const { timePicked, datePicked, firstName, lastName } = useCalendarData();
+  const { timePicked, datePicked } = useCalendarData();
 
   // Change Start Date Format to Google Calendar Accepted Format
   const currentDate = new Date(`${datePicked} ${timePicked}`).toISOString();
@@ -47,13 +46,28 @@ const ScheduleTimeForm = function () {
 
   const onSubmit = async function (formData) {
     dispatch(setFormContent(formData));
-    navigate('/strategy/success');
 
-    const event = eventBody(firstName, lastName, currentDate, endDate);
+    const event = eventBody(currentDate, endDate);
 
     // POST event to google calendar
-    createEvent(event, session.provider_token);
-    console.log(results);
+    const response = await axios.post(
+      'https://www.googleapis.com/calendar/v3/calendars/primary/events',
+      JSON.stringify(event),
+      {
+        headers: {
+          Authorization: `Bearer ${session.provider_token}`,
+        },
+        params: {
+          conferenceDataVersion: 1,
+        },
+      }
+    );
+
+    if (response.status === 200) {
+      navigate('/strategy/success');
+    } else {
+      // Render error component
+    }
   };
 
   return (

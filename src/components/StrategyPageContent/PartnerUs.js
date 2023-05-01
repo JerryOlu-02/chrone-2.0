@@ -2,8 +2,10 @@ import './PartnerUs.scss';
 import ChessImg from '../../images/chess.svg';
 import SettingsImg from '../../images/settings.svg';
 import ResultsImage from '../../images/results.svg';
+import React from 'react';
+import { forwardRef } from 'react';
 
-const PartnerUs = function () {
+const PartnerUs = forwardRef(function (props, ref) {
   const options = [
     {
       img: ChessImg,
@@ -37,7 +39,7 @@ const PartnerUs = function () {
   });
 
   return (
-    <section className="partner-us">
+    <section ref={ref} className="partner-us">
       <h2>
         Why <span>partner</span> with us
       </h2>
@@ -45,6 +47,6 @@ const PartnerUs = function () {
       <div className="card-list">{renderedCards}</div>
     </section>
   );
-};
+});
 
 export default PartnerUs;

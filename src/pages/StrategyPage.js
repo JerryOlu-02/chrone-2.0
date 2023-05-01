@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router-dom';
+import { createRef } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import HeroStrategy from '../components/StrategyPageContent/Hero/Hero';
 import LastContainer from '../components/StrategyPageContent/LastContainer';
 import MarkertingForm from '../components/StrategyPageContent/MarketingForm/MarketingForm';
@@ -7,6 +8,12 @@ import Button from '../ReusableComponents/Button';
 import ReusableCard from '../ReusableComponents/ReusableCard';
 
 const StrategyPage = function () {
+  const partnerUsRef = createRef();
+
+  const handleScroll = function () {
+    partnerUsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <HeroStrategy>
@@ -20,12 +27,12 @@ const StrategyPage = function () {
           <span>growth</span> in your company.
         </h2>
 
-        <Button>Learn more</Button>
+        <Button onClick={handleScroll}>Learn more</Button>
       </ReusableCard>
 
       <MarkertingForm />
 
-      <PartnerUs />
+      <PartnerUs ref={partnerUsRef} />
 
       <LastContainer />
     </>

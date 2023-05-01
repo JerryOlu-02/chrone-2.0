@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+// import { HashLink as Link } from 'react-router-has';
 
 const SiteMap = function () {
   return (
@@ -11,17 +11,17 @@ const SiteMap = function () {
           <Link to="/">Homepage</Link>
         </li>
         <li>
-          <Link>Services</Link>
+          <Link to="/">Services</Link>
         </li>
         <li>
           <Link to="pricing">Pricing</Link>
         </li>
 
         <li>
-          <Link>About</Link>
+          <Link to="/">About</Link>
         </li>
         <li>
-          <Link>Contact Us</Link>
+          <Link to="/">Contact Us</Link>
         </li>
       </ul>
     </section>

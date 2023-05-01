@@ -1,3 +1,5 @@
+import { v4 as uudid } from 'uuid';
+
 export const timeLength = ['15 mins', '30 mins', '1 hour'];
 export const time = [
   '10:00',
@@ -15,9 +17,10 @@ export const time = [
   '16:00',
 ];
 
-export const eventBody = function (firstName, lastName, startDate, endDate) {
+export const eventBody = function (startDate, endDate) {
+  const unique_id = uudid();
   return {
-    summary: `Scheduled Meeting of ${firstName} ${lastName} with Chrone Influitive Company`,
+    summary: `Scheduled Meeting of with Chrone Influitive Company`,
     description: 'More Insight on your marketing needs',
     start: {
       dateTime: startDate,
@@ -27,6 +30,14 @@ export const eventBody = function (firstName, lastName, startDate, endDate) {
       dateTime: endDate,
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     },
+    attendees: [{ email: 'joshuaoluwole25@gmail.com' }],
+    conferenceData: {
+      createRequest: {
+        requestId: unique_id,
+        conferenceSolutionKey: { type: 'hangoutsMeet' },
+      },
+    },
+    sendNotifications: true,
     reminders: {
       useDefault: false,
       overrides: [

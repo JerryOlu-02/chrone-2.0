@@ -1,6 +1,7 @@
 import './LastContainer.scss';
 import ReusableCard from '../../ReusableComponents/ReusableCard';
 import Button from '../../ReusableComponents/Button';
+import { Link } from 'react-router-dom';
 
 const LastContainer = function () {
   return (
@@ -11,7 +12,9 @@ const LastContainer = function () {
           brands and <span>agencies</span>.
         </h2>
 
-        <Button>Explore our plans</Button>
+        <Link to="pricing">
+          <Button>Explore our plans</Button>
+        </Link>
       </ReusableCard>
     </section>
   );

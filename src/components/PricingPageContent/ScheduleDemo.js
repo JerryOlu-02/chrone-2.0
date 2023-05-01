@@ -1,6 +1,7 @@
 import ReusableCard from '../../ReusableComponents/ReusableCard';
 import Button from '../../ReusableComponents/Button';
 import '../StrategyPageContent/LastContainer.scss';
+import { Link } from 'react-router-dom';
 
 const ScheduleDemo = function () {
   return (
@@ -8,10 +9,12 @@ const ScheduleDemo = function () {
       <ReusableCard>
         <h2>
           We're here to help! Ask us anything, or <span>schedule</span> a
-          <span>customized</span> demo.
+          <span> customized</span> demo.
         </h2>
 
-        <Button>Schedule demo</Button>
+        <Link to="/strategy">
+          <Button>Schedule demo</Button>
+        </Link>
       </ReusableCard>
     </section>
   );
