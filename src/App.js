@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './pages/Root';
 import HomePage from './pages/HomePage';
 import StrategyPage from './pages/StrategyPage';
+import PricingPage from './pages/PricingPage';
 import HeroCalendar from './components/StrategyPageContent/Hero/HeroCalendar';
 import ScheduleTimeForm from './components/StrategyPageContent/Hero/ScheduleTimeForm';
 import ScheduleSuccess from './components/StrategyPageContent/Hero/ScheduleSuccess';
@@ -35,6 +36,11 @@ const App = function () {
               element: <ScheduleSuccess />,
             },
           ],
+        },
+
+        {
+          path: 'pricing',
+          element: <PricingPage />,
         },
       ],
     },

@@ -36,6 +36,13 @@
   @include flex-row-center;
   list-style-type: none;
   gap: 60px;
+  justify-content: space-between;
+  width: 70%;
+
+  div {
+    @include flex-row-center;
+    gap: 60px;
+  }
 
   li {
     text-decoration: none;
@@ -77,12 +84,107 @@
   color: $white;
 }
 
+.menu-bar {
+  display: none;
+  cursor: pointer;
+}
+
 @media (max-width: 900px) {
+  .navbar {
+    position: relative;
+  }
+
+  .menu-bar {
+    position: relative;
+    @include flex-col;
+    height: 16px;
+    gap: 5px;
+    width: 30px;
+
+    span {
+      @include transition(transform);
+      background-color: #000000;
+      height: 2px;
+      width: 30px;
+    }
+  }
+
+  .menu-bar.active {
+    span:nth-of-type(1) {
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    span:nth-of-type(2) {
+      display: none;
+    }
+
+    span:nth-of-type(3) {
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      transform: rotate(135deg);
+    }
+  }
+
   .nav-list {
-    display: none;
+    // display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    transform: scaleY(0);
+    transform-origin: top;
+    @include transition(transform);
+
+    position: absolute;
+    left: 0;
+    top: calc(100% - 5px);
+
+    background-color: #141d3a;
+    padding: 20px 50px 45px;
+    width: 100%;
+
+    div {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 24px;
+    }
+
+    li {
+      a {
+        color: $white;
+      }
+
+      .nav-link-active {
+        color: $white;
+      }
+    }
+  }
+
+  .nav-list.active {
+    transform: scaleY(1);
+    // display: flex;
   }
 
   .button-link {
-    display: none;
+    width: 100%;
+
+    button {
+      background-color: $white;
+      border-radius: 17px;
+      height: 40px;
+      color: #141d3a;
+      width: 100%;
+
+      &::after {
+        content: url(../../images/get-started-mobile-icon.svg);
+        position: relative;
+        top: 1px;
+      }
+    }
   }
 }

@@ -20,7 +20,7 @@ const LastSection = function () {
             purchase, persistently
           </p>
 
-          <Link>Strategy Session Call</Link>
+          <Link to="strategy">Strategy Session Call</Link>
         </div>
 
         <div className="last-section-one-div">
@@ -34,7 +34,7 @@ const LastSection = function () {
           brands and <span>agencies</span>.
         </h2>
 
-        <Link>
+        <Link to="pricing">
           <Button>Explore our plans</Button>
         </Link>
       </div>

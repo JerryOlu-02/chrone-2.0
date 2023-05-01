@@ -1,5 +1,4 @@
 import { time, timeLength } from '../../../helpers/helpers';
-import { useState } from 'react';
 import { setTime, setTimeLength } from '../../../store';
 import { setActiveTimeFrame, setActiveTimeLength } from '../../../store';
 import { useDispatch, useSelector } from 'react-redux';

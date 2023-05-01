@@ -21,7 +21,7 @@ const StrategyContent = function () {
             right channels to capture the attention of potential customers.
           </p>
 
-          <Link>Let's grow together</Link>
+          <Link to="strategy">Let's grow together</Link>
         </aside>
       </div>
 
@@ -45,7 +45,7 @@ const StrategyContent = function () {
             </p>
           </div>
 
-          <Link>Strategy Session Call</Link>
+          <Link to="strategy">Strategy Session Call</Link>
         </aside>
       </div>
     </section>

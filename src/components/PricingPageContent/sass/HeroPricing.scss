@@ -1,0 +1,44 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.hero-pricing {
+  @include padding-full;
+  background-color: $white;
+  @include flex-col;
+  align-items: center;
+  padding-top: 75px;
+  padding-bottom: 100px;
+  gap: 70px;
+  background-image: url('../../../images/hero-pricing-background.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: -80%;
+}
+
+.hero-pricing-header {
+  text-align: center;
+  color: #263238;
+
+  h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+
+  span {
+    color: $orange;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-pricing {
+    gap: 50px;
+    padding-bottom: 60px;
+  }
+
+  .hero-pricing-header {
+    h2 {
+      font-size: 32px;
+    }
+  }
+}

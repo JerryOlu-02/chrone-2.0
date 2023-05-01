@@ -1,0 +1,52 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.explore-features {
+  @include padding-full;
+  @include flex-col;
+  align-items: center;
+  gap: 75px;
+
+  h3 {
+    text-align: center;
+    color: #263238;
+    font-size: 36px;
+  }
+}
+
+.need-help {
+  @include flex-col;
+  align-items: center;
+  gap: 24px;
+  color: #263238;
+
+  p {
+    font-size: 20px;
+  }
+
+  button {
+    background-color: $white;
+    color: #263238;
+    border: 1px solid #8c8c8c;
+    width: max-content;
+
+    svg {
+      width: 18px;
+      height: 18px;
+
+      path {
+        fill: #263238;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .explore-features {
+    gap: 48px;
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+}

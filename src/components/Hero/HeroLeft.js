@@ -4,6 +4,7 @@ import { ReactComponent as LineVerical } from '../../images/Line-vertical.svg';
 import { BsArrowRight } from 'react-icons/bs';
 import Button from '../../ReusableComponents/Button';
 import './HeroLeft.scss';
+import { Link } from 'react-router-dom';
 
 const HeroLeft = function () {
   return (
@@ -27,12 +28,14 @@ const HeroLeft = function () {
         </h2>
       </div>
 
-      <Button className="get-started-btn">
-        Get Started
-        <div>
-          <BsArrowRight />
-        </div>
-      </Button>
+      <Link to="strategy">
+        <Button className="get-started-btn">
+          Get Started
+          <div>
+            <BsArrowRight />
+          </div>
+        </Button>
+      </Link>
 
       <p>
         Stay connected with us and get your digital marketing strategy in place

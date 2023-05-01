@@ -1,0 +1,125 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.pricing-section {
+  @include flex-col;
+  align-items: center;
+  gap: 20px;
+}
+
+.pricing-list {
+  @include flex-row-center;
+  align-items: flex-start;
+  width: 90%;
+  gap: 28px;
+}
+
+.pricing-show {
+  background-color: $white;
+  border: 1px solid #8c8c8c;
+  width: 100%;
+  height: 620px;
+  padding: 31px 24px;
+  @include flex-col;
+  gap: 24px;
+  color: #263238;
+
+  @include transition(transform);
+
+  button {
+    border: none;
+    background-color: #141d3a;
+    border-radius: 0;
+    color: $white;
+  }
+}
+
+.pricing-show:nth-of-type(2) {
+  background-color: #141d3a;
+  color: $white;
+
+  button {
+    background-color: $white;
+    color: #141d3a;
+  }
+
+  svg {
+    path {
+      fill: $white;
+    }
+  }
+}
+
+.pricing-show-header {
+  @include flex-row-center;
+  gap: 24px;
+}
+
+.pricing-show-description {
+  font-size: 14px;
+  min-height: 50px;
+}
+
+.pricing-show-prices {
+  @include flex-col;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.available-plans-div {
+  @include flex-col;
+  gap: 15px;
+
+  .available-plans {
+    @include flex-row-center;
+    gap: 10px;
+    font-size: 14px;
+  }
+}
+
+.pricing-scroll {
+  @include flex-row-center;
+  gap: 16px;
+  display: none;
+
+  span {
+    background-color: #d9d9d9;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  span.active {
+    background-color: #141d3a;
+  }
+}
+
+@media (max-width: 800px) {
+  .pricing-list {
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      appearance: none;
+    }
+  }
+
+  .pricing-scroll {
+    display: flex;
+  }
+
+  .pricing-show:not(:nth-of-type(1)) {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .pricing-show:nth-of-type(3) {
+    transform: translateX(220%);
+  }
+
+  .pricing-show:nth-of-type(2) {
+    transform: translateX(110%);
+  }
+}

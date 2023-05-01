@@ -132,3 +132,13 @@
     }
   }
 }
+
+@media (max-width: 246px) {
+  .contact-us-div {
+    padding: 30px 20px;
+
+    p:first-of-type {
+      font-size: 10px;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 
 const SiteMap = function () {
   return (
@@ -7,13 +8,13 @@ const SiteMap = function () {
 
       <ul className="site-map-list">
         <li>
-          <Link>Homepage</Link>
+          <Link to="/">Homepage</Link>
         </li>
         <li>
           <Link>Services</Link>
         </li>
         <li>
-          <Link>Pricing</Link>
+          <Link to="pricing">Pricing</Link>
         </li>
 
         <li>

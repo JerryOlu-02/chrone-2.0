@@ -10,7 +10,7 @@
 
   h2 {
     font-weight: $medium-weight;
-    font-size: 45px;
+    font-size: 64px;
     color: #263238;
 
     span {
@@ -58,6 +58,7 @@
   .hero-left {
     width: 100%;
     align-items: center;
+    gap: 30px;
 
     h2 {
       font-size: 32px;

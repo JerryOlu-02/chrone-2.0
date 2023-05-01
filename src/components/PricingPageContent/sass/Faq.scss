@@ -1,0 +1,99 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.faq {
+  @include padding-full;
+  @include flex-col;
+  align-items: center;
+  gap: 60px;
+
+  h3 {
+    text-align: center;
+    color: #263238;
+    font-size: 36px;
+  }
+}
+
+.faq-list {
+  width: 85%;
+  @include flex-col;
+  gap: 26px;
+}
+
+.faq-show {
+  @include flex-col;
+  border: 1px solid #8c8c8c;
+  color: #263238;
+  cursor: pointer;
+  padding: 22px;
+
+  span {
+    @include transition(margin transform);
+    height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    padding-left: 27px;
+  }
+
+  div {
+    @include flex-row-center;
+    gap: 20px;
+  }
+}
+
+.faq-show.active {
+  span {
+    margin-top: 16px;
+    height: 100%;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  div {
+    p {
+      color: #01258a;
+    }
+
+    svg {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .faq {
+    gap: 32px;
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  .faq-list {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .faq-show {
+    padding: 21px 15px;
+
+    span {
+      font-size: 12px;
+      padding-left: 27px;
+    }
+
+    div {
+      gap: 12px;
+
+      p {
+        font-size: 12px;
+      }
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

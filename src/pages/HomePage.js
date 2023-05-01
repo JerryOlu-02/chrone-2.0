@@ -6,6 +6,7 @@ import DigitalModernEra from '../components/HomePageContent/DigitalModernEra';
 import BookSession from '../components/HomePageContent/BookSession';
 import ServicesWeOffer from '../components/HomePageContent/ServicesWeOffer';
 import LastSection from '../components/HomePageContent/LastSection';
+import { Link } from 'react-router-dom';
 
 const HomePage = function () {
   return (
@@ -17,7 +18,9 @@ const HomePage = function () {
           We design and develop <span>digital</span> stores to grow businesses
           and scale <span>brands</span> around the world.
         </h2>
-        <Button>Get Started</Button>
+        <Link to="strategy">
+          <Button>Get Started</Button>
+        </Link>
       </ReusableCard>
 
       <StrategyContent />

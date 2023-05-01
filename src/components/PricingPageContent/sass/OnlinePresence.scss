@@ -1,0 +1,28 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.online-presence {
+  @include flex-row-center;
+  justify-content: space-between;
+  padding-top: 100px;
+  gap: 200px;
+}
+
+@media (max-width: 800px) {
+  .online-presence {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

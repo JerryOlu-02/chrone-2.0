@@ -7,7 +7,7 @@
   padding-bottom: 125px;
 
   display: flex;
-  gap: 100px;
+  gap: 62px;
 
   background-image: url('../../images/hero-background.svg');
   background-size: cover;
@@ -18,7 +18,7 @@
 // MEDIA QUERIES
 @media (max-width: 1020px) {
   .hero {
-    gap: 70px;
+    gap: 50px;
   }
 }
 
