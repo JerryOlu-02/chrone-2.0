@@ -3,13 +3,11 @@ import './NavBar.scss';
 import { NavLink, Link } from 'react-router-dom';
 import Button from '../../ReusableComponents/Button';
 import { useState, useRef, useEffect } from 'react';
-import { useObserver } from '../../hooks/use-observer';
+import { IO } from '../../helpers/observer';
 
 const NavBar = function () {
   const navbarRef = useRef();
-
-  // const { isTouching } = useObserver(navbarRef, null);
-  // console.log(isTouching);
+  const intersectionObserverRef = useRef(null);
 
   const [showNav, setShowNav] = useState(false);
 
@@ -18,7 +16,30 @@ const NavBar = function () {
   };
 
   useEffect(() => {
-    const handler = function (event) {
+    // NavBar
+    // const item = navbarRef.current;
+    // if (intersectionObserverRef.current) return;
+
+    // intersectionObserverRef.current = new IntersectionObserver(
+    //   (entries) => {
+    //     entries.forEach((entry) => {
+    //       if (!entry.isIntersecting) {
+    //         item.classList.add('fixed');
+    //       } else {
+    //         item.classList.remove('fixed');
+    //       }
+    //     });
+    //   },
+    //   {
+    //     root: null,
+    //     threshold: 0,
+    //   }
+    // );
+
+    // intersectionObserverRef.current.observe(item);
+
+    // MenuBar
+    const clickHandler = function (event) {
       if (!navbarRef.current) return;
 
       if (navbarRef.current.contains(event.target)) return;
@@ -28,22 +49,23 @@ const NavBar = function () {
       setShowNav(false);
     };
 
-    document.addEventListener('click', handler, true);
+    document.addEventListener('click', clickHandler, true);
 
     return () => {
-      document.removeEventListener('click', handler);
+      document.removeEventListener('click', clickHandler);
+      // intersectionObserverRef.current.unobserve(item);
     };
   }, []);
 
   const activeNav = showNav ? 'active' : '';
 
   return (
-    <nav className={`navbar`}>
+    <nav ref={navbarRef} className={`navbar`}>
       <Link to="/">
         <img className="navbar-logo" src={ChroneLogo} alt="chrone__logo" />
       </Link>
 
-      <ul ref={navbarRef} className={`nav-list ${activeNav}`}>
+      <ul className={`nav-list ${activeNav}`}>
         <div>
           <li>
             <NavLink
