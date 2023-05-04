@@ -1,4 +1,6 @@
-import ChroneLogo from '../../images/chronelogo (1).png';
+import ChroneLogo from '../../images/chronelogo.png';
+import CLogo from '../../images/C-chronelogo.png';
+
 import './NavBar.scss';
 import { NavLink, Link } from 'react-router-dom';
 import Button from '../../ReusableComponents/Button';
@@ -62,7 +64,10 @@ const NavBar = function () {
   return (
     <nav ref={navbarRef} className={`navbar`}>
       <Link to="/">
-        <img className="navbar-logo" src={ChroneLogo} alt="chrone__logo" />
+        <div className="navbar-logo">
+          <img src={CLogo} alt="C-chrone__logo" />
+          <img src={ChroneLogo} alt="chrone__logo" />
+        </div>
       </Link>
 
       <ul className={`nav-list ${activeNav}`}>
