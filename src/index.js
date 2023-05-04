@@ -6,9 +6,11 @@ import { Provider } from 'react-redux';
 import { createClient } from '@supabase/supabase-js';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 
+const supabaseKey = process.env.REACT_APP_SUPABASE_PRIVATE_KEY;
+
 const supabase = createClient(
   'https://csjklqqvdrjnqlkxkkmd.supabase.co',
-  process.env.REACT_APP_SUPABASE_PRIVATE_KEY
+  supabaseKey
 );
 
 const el = document.getElementById('root');
