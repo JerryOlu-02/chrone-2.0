@@ -1,15 +1,12 @@
 import ChroneLogo from '../../images/chronelogo.png';
 import CLogo from '../../images/C-chronelogo.png';
-
 import './NavBar.scss';
 import { NavLink, Link } from 'react-router-dom';
 import Button from '../../ReusableComponents/Button';
 import { useState, useRef, useEffect } from 'react';
-import { IO } from '../../helpers/observer';
 
 const NavBar = function () {
   const navbarRef = useRef();
-  const intersectionObserverRef = useRef(null);
 
   const [showNav, setShowNav] = useState(false);
 
@@ -18,28 +15,6 @@ const NavBar = function () {
   };
 
   useEffect(() => {
-    // NavBar
-    // const item = navbarRef.current;
-    // if (intersectionObserverRef.current) return;
-
-    // intersectionObserverRef.current = new IntersectionObserver(
-    //   (entries) => {
-    //     entries.forEach((entry) => {
-    //       if (!entry.isIntersecting) {
-    //         item.classList.add('fixed');
-    //       } else {
-    //         item.classList.remove('fixed');
-    //       }
-    //     });
-    //   },
-    //   {
-    //     root: null,
-    //     threshold: 0,
-    //   }
-    // );
-
-    // intersectionObserverRef.current.observe(item);
-
     // MenuBar
     const clickHandler = function (event) {
       if (!navbarRef.current) return;
@@ -55,7 +30,6 @@ const NavBar = function () {
 
     return () => {
       document.removeEventListener('click', clickHandler);
-      // intersectionObserverRef.current.unobserve(item);
     };
   }, []);
 

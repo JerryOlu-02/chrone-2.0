@@ -1,5 +1,5 @@
 import { createRef } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import HeroStrategy from '../components/StrategyPageContent/Hero/Hero';
 import LastContainer from '../components/StrategyPageContent/LastContainer';
 import MarkertingForm from '../components/StrategyPageContent/MarketingForm/MarketingForm';

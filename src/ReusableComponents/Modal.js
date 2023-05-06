@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom';
 import './Modal.scss';
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 import { BiErrorCircle } from 'react-icons/bi';
-import { useState } from 'react';
 
 const Modal = function ({ success, message, onClose }) {
   return ReactDOM.createPortal(
