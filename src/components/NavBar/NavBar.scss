@@ -183,6 +183,7 @@
 
   .nav-list.active {
     transform: scaleY(1);
+    z-index: 50;
     // display: flex;
   }
 
