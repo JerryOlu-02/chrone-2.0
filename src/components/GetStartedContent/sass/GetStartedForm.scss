@@ -1,0 +1,140 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.get-started-form {
+  @include flex-row-center;
+  padding: 110px 120px;
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.15);
+  gap: 100px;
+
+  form {
+    width: 50%;
+    @include flex-col;
+    gap: 32px;
+  }
+
+  .pricing-show {
+    width: 50%;
+    height: unset;
+    min-height: 500px;
+    padding-bottom: 40px;
+  }
+
+  input {
+    width: 100%;
+    padding-left: 10px;
+    height: 2.5rem;
+    border: 1px solid rgba(152, 152, 152, 0.3);
+    border-radius: 4px;
+    color: #263238;
+    @include transition(border);
+
+    &:focus {
+      outline: none;
+      border: 1.5px solid #141d3a;
+    }
+
+    &::placeholder {
+      color: rgba($color: #000000, $alpha: 0.4);
+    }
+  }
+}
+
+.title-container {
+  @include flex-col;
+  gap: 15px;
+
+  p {
+    margin-bottom: 5px;
+    color: #141d3a;
+    font-weight: $medium-weight;
+  }
+
+  div {
+    @include flex-col;
+
+    span {
+      display: none;
+      font-size: 12px;
+      color: $orange;
+    }
+
+    textarea {
+      height: 7rem;
+      padding: 10px 0 0 10px;
+      border: 1px solid rgba(152, 152, 152, 0.3);
+      border-radius: 4px;
+      @include transition(border);
+
+      &:focus {
+        outline: none;
+        border: 1.5px solid #141d3a;
+      }
+
+      &::placeholder {
+        color: rgba($color: #000000, $alpha: 0.4);
+      }
+    }
+  }
+}
+
+.select-plan {
+  cursor: pointer;
+  padding: 10px;
+  height: 2.5rem;
+  border: 1px solid rgba(152, 152, 152, 0.3);
+  position: relative;
+
+  p {
+    font-size: 14px;
+    color: rgba($color: #000000, $alpha: 0.4);
+  }
+
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.select-plan-list {
+  font-size: 14px;
+
+  div {
+    @include transition(background-color height);
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid rgba(152, 152, 152, 0.3);
+    border-top: 0;
+    height: 0px;
+    opacity: 0;
+
+    p {
+      display: none;
+    }
+
+    &:hover,
+    &.active {
+      background-color: #141d3a;
+
+      p {
+        color: $white;
+      }
+    }
+  }
+}
+
+.select-plan-list.active {
+  div {
+    opacity: 1;
+    padding: 10px;
+    height: 2.5rem;
+
+    p {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.get-started {
+  @include padding-full;
+  padding-top: 70px;
+  @include flex-col;
+  gap: 100px;
+}
+
+.get-started-header {
+  @include flex-col;
+  align-items: center;
+  text-align: center;
+  color: #263238;
+
+  h2 {
+    font-size: 64px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}

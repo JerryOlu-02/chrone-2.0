@@ -7,6 +7,8 @@ import PricingPage from './pages/PricingPage';
 import HeroCalendar from './components/StrategyPageContent/Hero/HeroCalendar';
 import ScheduleTimeForm from './components/StrategyPageContent/Hero/ScheduleTimeForm';
 import ScheduleSuccess from './components/StrategyPageContent/Hero/ScheduleSuccess';
+import GetStartedPage from './pages/GetStartedPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 const App = function () {
   const router = createBrowserRouter([
@@ -41,6 +43,16 @@ const App = function () {
         {
           path: 'pricing',
           element: <PricingPage />,
+        },
+
+        {
+          path: 'get-started',
+          element: <GetStartedPage />,
+        },
+
+        {
+          path: 'privacy-policy',
+          element: <PrivacyPage />,
         },
       ],
     },

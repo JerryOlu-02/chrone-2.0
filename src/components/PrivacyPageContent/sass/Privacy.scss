@@ -1,0 +1,68 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.privacy-header {
+  @include padding-full;
+  background-color: #1d2643;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  color: $white;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $white;
+    left: 0;
+    bottom: calc(100% + 4px);
+    width: 100%;
+    height: 1px;
+    z-index: 20000;
+  }
+
+  h2 {
+    font-size: 64px;
+    margin-left: 40px;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: $medium-weight;
+    margin-left: 40px;
+  }
+}
+
+.privacy-content {
+  @include padding-full;
+  @include flex-col;
+  gap: 30px;
+  background-color: #e7ebfa;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  font-weight: $regular-weight;
+
+  div {
+    @include flex-col;
+    gap: 25px;
+  }
+
+  h3 {
+    font-size: 24px;
+    color: #263238;
+  }
+
+  p {
+    color: #263238;
+    font-size: 16px;
+    line-height: 1.5;
+
+    span {
+      font-weight: $semi-bold-weight;
+    }
+
+    a {
+      color: #263238;
+      text-decoration: none;
+    }
+  }
+}
