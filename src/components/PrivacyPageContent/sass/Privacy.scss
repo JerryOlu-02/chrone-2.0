@@ -66,3 +66,38 @@
     }
   }
 }
+
+@media (max-width: 786px) {
+  .privacy-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    h2 {
+      margin-left: 10px;
+      font-size: 34px;
+    }
+
+    p {
+      margin-left: 10px;
+      font-size: 16px;
+    }
+  }
+
+  .privacy-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 25px;
+
+    div {
+      gap: 20px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
