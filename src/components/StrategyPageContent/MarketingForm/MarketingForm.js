@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
 import { useState } from 'react';
+import PostFormData from '../../../helpers/PostFormData';
 
 const MarkertingForm = function () {
   // Modal Render
@@ -41,17 +42,9 @@ const MarkertingForm = function () {
       setLoading(true);
 
       // POST data to formspree
-      const response = await axios.post(
-        'https://formspree.io/f/mknakdyk',
-        data,
-        {
-          headers: {
-            Accept: 'application/json',
-          },
-        }
-      );
+      const status = await PostFormData('mknakdyk', data);
 
-      if (response.status === 200) {
+      if (status === 200) {
         setLoading(false);
 
         // Show Modal

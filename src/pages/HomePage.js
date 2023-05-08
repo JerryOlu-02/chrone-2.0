@@ -18,7 +18,7 @@ const HomePage = function () {
           We design and develop <span>digital</span> stores to grow businesses
           and scale <span>brands</span> around the world.
         </h2>
-        <Link to="strategy">
+        <Link to="/get-started">
           <Button>Get Started</Button>
         </Link>
       </ReusableCard>

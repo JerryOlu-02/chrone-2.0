@@ -40,7 +40,7 @@ const OnlinePresence = function () {
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <CallIcon style={{ backgroundColor: '#ffffff' }} />
           <p style={{ color: '#D75023', width: 'max-content' }}>
-            +234 80 6516 8999
+            +234 813 489 8236
           </p>
         </div>
       </div>

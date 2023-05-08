@@ -9,7 +9,7 @@ const ContactUs = function () {
       <div className="contact-us-div">
         <p>admin@chronecompany.com</p>
 
-        <p>+234 809 456 5859</p>
+        <p>+234 813 489 8236</p>
 
         <p>
           364, Borno Way, Alagomeji,

@@ -1,50 +1,40 @@
 import './sass/GetStartedForm.scss';
 import Button from '../../ReusableComponents/Button';
+import Modal from '../../ReusableComponents/Modal';
 import { pricingPlans } from '../../helpers/helpers';
 import PricingShow from '../PricingPageContent/PricingShow';
 import { ReactComponent as SelectPlan } from '../../images/select-plan.svg';
-import { useReducer } from 'react';
-
-const reducer = function (state, action) {
-  switch (action.type) {
-    case 'set-show-plan':
-      return {
-        ...state,
-        showPlans: action.payload,
-      };
-
-    case 'set-state':
-      return {
-        ...action.payload,
-      };
-
-    default:
-      return state;
-  }
-};
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { useSelectedPlan } from '../../hooks/use-selected-plan';
+import PostFormData from '../../helpers/PostFormData';
+import { useState } from 'react';
 
 const GetStartedForm = function () {
-  const [state, dispatch] = useReducer(reducer, {
-    showPlans: false,
-    selectedPlan: null,
+  const [isLoading, setIsLoading] = useState();
+  const [modalContent, setModalContent] = useState();
+
+  // Hide Modal
+  const handleClose = () => setModalContent(null);
+
+  const validationSchema = yup.object({
+    firstName: yup.string().required(),
+    lastName: yup.string().required(),
+    phoneNumber: yup.string().required(),
+    emailAddress: yup.string().email().required(),
+    companyName: yup.string().required(),
+    message: yup.string(),
   });
 
-  const handleShowPlans = function () {
-    dispatch({
-      type: 'set-show-plan',
-      payload: !state.showPlans,
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(validationSchema) });
 
-  const handlePlanClick = function (index) {
-    dispatch({
-      type: 'set-state',
-      payload: {
-        showPlans: false,
-        selectedPlan: index,
-      },
-    });
-  };
+  const { state, handlePlanClick, handleShowPlans } = useSelectedPlan();
 
   const renderedSelectedPlans = pricingPlans.map((pricing, index) => (
     <div
@@ -56,25 +46,83 @@ const GetStartedForm = function () {
     </div>
   ));
 
+  const onSubmit = async function (data) {
+    try {
+      const finalData = {
+        ...data,
+        selectedPlan: pricingPlans[state.selectedPlan].plan,
+      };
+
+      setIsLoading(true);
+
+      const status = await PostFormData('xpzebgpd', finalData);
+      if (status === 200) {
+        setIsLoading(false);
+
+        // Show Modal
+        setModalContent(
+          <Modal
+            success
+            message="Your form has been submitted successfully"
+            onClose={handleClose}
+          />
+        );
+
+        reset();
+
+        // Remove Modal after 10 seconds
+        setTimeout(() => {
+          setModalContent(null);
+        }, 10000);
+      }
+    } catch (error) {
+      setIsLoading(false);
+
+      // Show Modal
+      setModalContent(<Modal message={error.message} onClose={handleClose} />);
+
+      // Clear form inputs
+      reset();
+
+      // Remove modal after 5 seconds
+      setTimeout(() => {
+        setModalContent(null);
+      }, 10000);
+    }
+  };
+
   return (
-    <div className="get-started-form">
+    <div onSubmit={handleSubmit(onSubmit)} className="get-started-form">
+      {modalContent}
       <form>
         <div className="title-container">
           <p>Your Information</p>
 
           <div>
-            <input type="text" placeholder="First name" />
-            <span>error</span>
+            <input
+              {...register('firstName')}
+              type="text"
+              placeholder="First name"
+            />
+            {errors.firstName && <span>This field is required</span>}
           </div>
 
           <div>
-            <input type="text" placeholder="Last name" />
-            <span>error</span>
+            <input
+              {...register('lastName')}
+              type="text"
+              placeholder="Last name"
+            />
+            {errors.lastName && <span>This field is required</span>}
           </div>
 
           <div>
-            <input type="text" placeholder="Phone number" />
-            <span>error</span>
+            <input
+              {...register('phoneNumber')}
+              type="text"
+              placeholder="Phone number"
+            />
+            {errors.phoneNumber && <span>This field is required</span>}
           </div>
         </div>
 
@@ -82,13 +130,21 @@ const GetStartedForm = function () {
           <p>Company's Information</p>
 
           <div>
-            <input type="text" placeholder="Company name" />
-            <span>error</span>
+            <input
+              {...register('companyName')}
+              type="text"
+              placeholder="Company name"
+            />
+            {errors.companyName && <span>This field is required</span>}
           </div>
 
           <div>
-            <input type="text" placeholder="Email address" />
-            <span>error</span>
+            <input
+              {...register('emailAddress')}
+              type="text"
+              placeholder="Email address"
+            />
+            {errors.emailAddress && <span>This field is required</span>}
           </div>
         </div>
 
@@ -110,16 +166,14 @@ const GetStartedForm = function () {
             >
               {renderedSelectedPlans}
             </section>
-
-            <span>error</span>
           </div>
 
           <div>
-            <textarea placeholder="Message"></textarea>
+            <textarea {...register('message')} placeholder="Message"></textarea>
           </div>
         </div>
 
-        <Button>Submit</Button>
+        <Button loading={isLoading}>Submit</Button>
       </form>
 
       <PricingShow

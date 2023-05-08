@@ -28,7 +28,7 @@ const HeroLeft = function () {
         </h2>
       </div>
 
-      <Link to="strategy">
+      <Link to="/get-started">
         <Button className="get-started-btn">
           Get Started
           <div>
