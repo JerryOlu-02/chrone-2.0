@@ -12,7 +12,7 @@ const LastContainer = function () {
           brands and <span>agencies</span>.
         </h2>
 
-        <Link to="pricing">
+        <Link to="/pricing">
           <Button>Explore our plans</Button>
         </Link>
       </ReusableCard>
