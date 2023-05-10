@@ -7,10 +7,12 @@ import BookSession from '../components/HomePageContent/BookSession';
 import ServicesWeOffer from '../components/HomePageContent/ServicesWeOffer';
 import LastSection from '../components/HomePageContent/LastSection';
 import { Link } from 'react-router-dom';
+import EventPopup from '../components/ExtraFeatures/EventPopup';
 
 const HomePage = function () {
   return (
     <>
+      <EventPopup />
       <Hero />
 
       <ReusableCard>

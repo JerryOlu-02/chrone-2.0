@@ -1,0 +1,40 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.event-alert {
+  @include flex-row-center;
+  background-color: #141d3a;
+  height: 55px;
+  width: 100%;
+  overflow-x: hidden;
+  color: $white;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 10;
+
+  div {
+    display: flex;
+    gap: 200px;
+    animation-name: moves;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-direction: right;
+    animation-timing-function: linear;
+    width: max-content;
+
+    p {
+      width: max-content;
+    }
+  }
+}
+
+@keyframes moves {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

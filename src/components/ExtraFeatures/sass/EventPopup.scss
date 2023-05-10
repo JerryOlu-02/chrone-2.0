@@ -1,0 +1,139 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.event-container {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 15;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.event-container.hide {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.event {
+  background-color: $white;
+  border-radius: 13px;
+  min-width: 50%;
+  padding: 48px 37px;
+  position: absolute;
+  bottom: 52%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 20;
+
+  @include flex-col;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+
+  .event-paragraph {
+    span {
+      color: $orange;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+    color: #011f8a;
+  }
+
+  svg {
+    cursor: pointer;
+    position: absolute;
+    top: 23px;
+    right: 37px;
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+  button {
+    width: 80%;
+    background-color: #011f8a;
+  }
+}
+
+.event-details-container {
+  @include flex-row-center;
+  gap: 80px;
+  margin-top: 10px;
+
+  div {
+    @include flex-col;
+    align-items: flex-start;
+    position: relative;
+
+    p:nth-of-type(2) {
+      font-size: 12px;
+    }
+  }
+
+  div:first-of-type {
+    &::after {
+      @include gridBar(rgba($color: #000000, $alpha: 0.5));
+      width: 1.5px;
+      height: 100%;
+      left: unset;
+      right: -40px;
+    }
+  }
+
+  span {
+    color: #011f8a;
+  }
+}
+
+@media (max-width: 1050px) {
+  .event {
+    min-width: 60%;
+  }
+}
+
+@media (max-width: 868px) {
+  .event {
+    min-width: 70%;
+  }
+}
+
+@media (max-width: 735px) {
+  .event {
+    min-width: 90%;
+    font-size: 14px;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .event-details-container {
+      p {
+        text-align: left;
+      }
+    }
+
+    button {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .event {
+    h3 {
+      font-size: 20px;
+    }
+  }
+}

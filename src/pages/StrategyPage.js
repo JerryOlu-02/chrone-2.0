@@ -1,5 +1,6 @@
 import { createRef } from 'react';
 import { Outlet } from 'react-router-dom';
+import EventPopup from '../components/ExtraFeatures/EventPopup';
 import HeroStrategy from '../components/StrategyPageContent/Hero/Hero';
 import LastContainer from '../components/StrategyPageContent/LastContainer';
 import MarkertingForm from '../components/StrategyPageContent/MarketingForm/MarketingForm';
@@ -16,6 +17,8 @@ const StrategyPage = function () {
 
   return (
     <>
+      <EventPopup />
+
       <HeroStrategy>
         <Outlet />
       </HeroStrategy>
