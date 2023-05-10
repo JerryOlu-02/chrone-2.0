@@ -130,10 +130,28 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .event {
+    padding-bottom: 30px;
+
     h3 {
       font-size: 20px;
+    }
+  }
+
+  .event-details-container {
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+      align-items: center;
+      text-align: center;
+    }
+
+    div:first-of-type {
+      &::after {
+        width: 0;
+      }
     }
   }
 }

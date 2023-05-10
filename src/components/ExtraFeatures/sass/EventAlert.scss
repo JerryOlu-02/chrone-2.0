@@ -17,7 +17,7 @@
     display: flex;
     gap: 200px;
     animation-name: moves;
-    animation-duration: 40s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-direction: right;
     animation-timing-function: linear;
@@ -31,7 +31,7 @@
 
 @keyframes moves {
   0% {
-    transform: translateX(100%);
+    transform: translateX(10%);
   }
 
   100% {
