@@ -1,4 +1,3 @@
-import EventPopup from '../components/ExtraFeatures/EventPopup';
 import ExploreFeatures from '../components/PricingPageContent/ExploreFeatures';
 import FaqList from '../components/PricingPageContent/FaqList';
 import HeroPricing from '../components/PricingPageContent/HeroPricing';
@@ -8,8 +7,6 @@ import ScheduleDemo from '../components/PricingPageContent/ScheduleDemo';
 const PricingPage = function () {
   return (
     <>
-      <EventPopup />
-
       <HeroPricing />
 
       <ExploreFeatures />

@@ -8,11 +8,21 @@ import ServicesWeOffer from '../components/HomePageContent/ServicesWeOffer';
 import LastSection from '../components/HomePageContent/LastSection';
 import { Link } from 'react-router-dom';
 import EventPopup from '../components/ExtraFeatures/EventPopup';
+import { useEffect, useState } from 'react';
 
 const HomePage = function () {
+  const [eventContent, setEventContent] = useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setEventContent(<EventPopup />);
+    }, 5000);
+  }, []);
+
   return (
     <>
-      <EventPopup />
+      {eventContent}
+
       <Hero />
 
       <ReusableCard>
