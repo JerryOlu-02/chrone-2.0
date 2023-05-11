@@ -21,5 +21,3 @@ const EventAlert = function () {
 };
 
 export default EventAlert;
-
-// animation: moves 50s linear infinite right;

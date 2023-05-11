@@ -14,9 +14,13 @@ const HomePage = function () {
   const [eventContent, setEventContent] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setEventContent(<EventPopup />);
     }, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
