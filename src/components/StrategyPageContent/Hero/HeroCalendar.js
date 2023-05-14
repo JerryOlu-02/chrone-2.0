@@ -11,6 +11,7 @@ import {
   useSessionContext,
 } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
+import { FcGoogle } from 'react-icons/fc';
 
 const HeroCalendar = function () {
   const [showScheduleTime, setShowScheduleTime] = useState(false);
@@ -81,6 +82,9 @@ const HeroCalendar = function () {
             <ScheduleTime />
           ) : (
             <Button className="signin-button" onClick={() => googleSignIn()}>
+              <div>
+                <FcGoogle />
+              </div>{' '}
               Sign In With Google
             </Button>
           )}

@@ -11,7 +11,7 @@ const Privacy = function () {
       <div className="privacy-content">
         <div>
           <h3>Chrone Privacy Policy</h3>
-          <p>Last updated: May 04, 2023</p>
+          <p>Last updated: May 14, 2023</p>
           <p>
             This Privacy Policy describes how we collect, receive, use, store,
             share, transfer, and process your Personal Data. It also describes
@@ -374,6 +374,21 @@ const Privacy = function () {
 
           <p>
             <span>Disclosure of Your Personal Data</span>
+          </p>
+
+          <p>
+            <span>Google API Service Usage</span>
+            <br />
+            Chrone Influitive Company's use and transfer to any other app of
+            information received from Google APIs will adhere to{' '}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
+            >
+              Google API Services User Data Policy
+            </a>
+            , including the Limited Use requirements.
           </p>
 
           <p>

@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import axios from 'axios';
-import Modal from '../ReusableComponents/Modal';
 
 const PostFormData = async function (id, data) {
   try {

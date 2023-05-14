@@ -1,5 +1,6 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 .hero-calendar-container {
   box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.1);
@@ -95,12 +96,31 @@
   position: relative;
 
   .signin-button {
-    border-radius: 0;
-    background-color: $white;
-    color: #141d3a;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: #4285f4;
+    color: $white;
     position: absolute;
     right: 20px;
     bottom: 0;
+    gap: 10px;
+    padding-left: 1.5px;
+    border-radius: 2px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+    div {
+      width: 36px;
+      height: 36px;
+      background-color: $white;
+      @include flex-row-center;
+      justify-content: center;
+      border-radius: 2px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
 
