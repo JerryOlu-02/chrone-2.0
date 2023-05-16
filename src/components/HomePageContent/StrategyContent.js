@@ -1,14 +1,22 @@
 import './StrategyContent.scss';
 import { Link } from 'react-router-dom';
-import CoworkersImage from '../../images/cheerful-coworkers-looking-each-other-gadgets.png';
-import WorkingLaptop from '../../images/working-laptop.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import CoworkersImage from '../../images/cheerful-coworkers-looking-each-other-gadgets-screen.jpg';
+import WorkingLaptop from '../../images/working-laptop.jpg';
+import PlaceholderCoworkersImage from '../../images/cheerful-coworkers-looking-each-other-gadgets-screen.webp';
+import PlaceHolderWorkingLaptop from '../../images/working-laptop.webp';
 import { ReactComponent as CheckMark } from '../../images/check-mark.svg';
 
 const StrategyContent = function () {
   return (
     <section className="strategy-content">
       <div className="strategy-content-top">
-        <img src={CoworkersImage} alt="coworkwers__image" />
+        {/* <img src={CoworkersImage} alt="coworkwers__image" /> */}
+        <LazyLoadImage
+          src={CoworkersImage}
+          placeholderSrc={PlaceholderCoworkersImage}
+          alt="coworkwers__image"
+        />
 
         <aside>
           <h3>
@@ -26,7 +34,12 @@ const StrategyContent = function () {
       </div>
 
       <div className="strategy-content-bottom">
-        <img src={WorkingLaptop} alt="working-laptop__image" />
+        {/* <img src={WorkingLaptop} alt="working-laptop__image" /> */}
+        <LazyLoadImage
+          src={WorkingLaptop}
+          placeholderSrc={PlaceHolderWorkingLaptop}
+          alt="working-laptop__image"
+        />
 
         <aside>
           <h3>

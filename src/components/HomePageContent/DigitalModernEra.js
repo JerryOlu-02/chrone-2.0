@@ -1,5 +1,8 @@
-import WebDesignImg from '../../images/web-design.png';
-import ProgrammersImg from '../../images/programmers.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import WebDesignImg from '../../images/web-design.jpg';
+import ProgrammersImg from '../../images/programmers.jpg';
+import PlaceholderWebDesignImg from '../../images/web-design.webp';
+import PlaceholderProgrammersImg from '../../images/programmers.webp';
 import './DigitalModernEra.scss';
 
 const DigitalModernEra = function () {
@@ -20,8 +23,22 @@ const DigitalModernEra = function () {
       </div>
 
       <div>
-        <img src={WebDesignImg} alt="web-design-process" />
-        <img src={ProgrammersImg} alt="programmers-interaction" />
+        <aside>
+          <LazyLoadImage
+            src={WebDesignImg}
+            placeholderSrc={PlaceholderWebDesignImg}
+            alt="web-design-process"
+          />
+        </aside>
+        <aside>
+          <LazyLoadImage
+            src={ProgrammersImg}
+            placeholderSrc={PlaceholderProgrammersImg}
+            alt="programmers-interaction"
+          />
+        </aside>
+        {/* <img src={WebDesignImg} alt="web-design-process" /> */}
+        {/* <img src={ProgrammersImg} alt="programmers-interaction" /> */}
       </div>
     </section>
   );

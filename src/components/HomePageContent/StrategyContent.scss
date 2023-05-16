@@ -49,6 +49,7 @@
   img {
     box-shadow: 0px 30px 60px rgba(1, 37, 138, 0.1);
     border-radius: 23px;
+    height: 350px;
     width: 100%;
   }
 
@@ -65,6 +66,7 @@
   img {
     box-shadow: 0px 30px 60px rgba(1, 37, 138, 0.1);
     border-radius: 28px;
+    height: 500px;
     width: 100%;
   }
 
@@ -92,6 +94,7 @@
 
   .strategy-content-top {
     img {
+      height: unset;
       max-height: 332px;
     }
   }
@@ -100,12 +103,13 @@
     direction: ltr;
 
     img {
+      height: unset;
       max-height: 402px;
     }
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 836px) {
   .strategy-content-top,
   .strategy-content-bottom {
     aside {
@@ -119,7 +123,7 @@
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 920px) {
   .strategy-content-top,
   .strategy-content-bottom {
     display: flex;

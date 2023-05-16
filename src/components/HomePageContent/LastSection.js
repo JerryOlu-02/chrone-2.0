@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import './LastSection.scss';
-import WomanImage from '../../images/african-american-business-woman.png';
+import WomanImage from '../../images/african-american-business-woman.jpg';
+import PlaceholderWomanImage from '../../images/african-american-business-woman.webp';
 import Button from '../../ReusableComponents/Button';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const LastSection = function () {
   return (
@@ -24,7 +26,12 @@ const LastSection = function () {
         </div>
 
         <div className="last-section-one-div">
-          <img src={WomanImage} alt="woman__image" />
+          <LazyLoadImage
+            src={WomanImage}
+            placeholderSrc={PlaceholderWomanImage}
+            alt="woman__image"
+          />
+          {/* <img src={WomanImage} alt="woman__image" /> */}
 
           <div className="creativity">Creativity</div>
           <div className="strategy">Strategy</div>
