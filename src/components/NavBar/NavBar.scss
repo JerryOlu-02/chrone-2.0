@@ -205,3 +205,14 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .navbar-logo {
+    width: 100%;
+
+    img {
+      width: 75%;
+      height: 100%;
+    }
+  }
+}
