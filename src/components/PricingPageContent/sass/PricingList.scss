@@ -26,8 +26,14 @@
 
   @include transition(transform);
 
+  a {
+    text-decoration: none;
+    width: 100%;
+  }
+
   button {
     border: none;
+    width: 100%;
     background-color: #141d3a;
     border-radius: 0;
     color: $white;

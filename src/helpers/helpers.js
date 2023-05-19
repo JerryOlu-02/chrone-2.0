@@ -20,7 +20,7 @@ export const time = [
 export const eventBody = function (startDate, endDate) {
   const unique_id = uudid();
   return {
-    summary: `Scheduled Meeting of with Chrone Influitive Company`,
+    summary: `Scheduled Strategy Session with Chrone Influitive Company`,
     description: 'More Insight on your marketing needs',
     start: {
       dateTime: startDate,

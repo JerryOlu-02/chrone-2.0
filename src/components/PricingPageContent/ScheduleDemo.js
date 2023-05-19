@@ -12,7 +12,7 @@ const ScheduleDemo = function () {
           <span> customized</span> demo.
         </h2>
 
-        <Link to="/strategy">
+        <Link to="/demo">
           <Button>Schedule demo</Button>
         </Link>
       </ReusableCard>

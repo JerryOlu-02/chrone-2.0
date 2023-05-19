@@ -25,7 +25,7 @@ const OnlinePresence = function () {
           to the next level!
         </h2>
 
-        <Link to="/strategy">
+        <Link to="/demo">
           <Button style={{ backgroundColor: '#FFFFFF', color: '#141D3A' }}>
             Schedule demo
           </Button>

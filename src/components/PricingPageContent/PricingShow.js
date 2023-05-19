@@ -1,6 +1,7 @@
 import { ReactComponent as PricingImage } from '../../images/pricing-image.svg';
 import { ReactComponent as PricingPlanMark } from '../../images/pricing-plan-mark.svg';
 import Button from '../../ReusableComponents/Button';
+import { Link } from 'react-router-dom';
 
 const PricingShow = function ({ pricing }) {
   const availablePlans = pricing.planPackages.map((plans) => {
@@ -27,7 +28,9 @@ const PricingShow = function ({ pricing }) {
         <p>billed monthly</p>
       </div>
 
-      <Button>Buy now</Button>
+      <Link to="/demo">
+        <Button>Buy now</Button>
+      </Link>
 
       <p>Includes:</p>
 

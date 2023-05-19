@@ -9,6 +9,7 @@ import ScheduleTimeForm from './components/StrategyPageContent/Hero/ScheduleTime
 import ScheduleSuccess from './components/StrategyPageContent/Hero/ScheduleSuccess';
 import GetStartedPage from './pages/GetStartedPage';
 import PrivacyPage from './pages/PrivacyPage';
+import DemoPage from './pages/DemoPage';
 
 const App = function () {
   const router = createBrowserRouter([
@@ -53,6 +54,11 @@ const App = function () {
         {
           path: 'privacy-policy',
           element: <PrivacyPage />,
+        },
+
+        {
+          path: 'demo',
+          element: <DemoPage />,
         },
       ],
     },
