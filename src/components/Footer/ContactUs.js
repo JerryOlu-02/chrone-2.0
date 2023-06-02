@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { FaTwitterSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 
 const ContactUs = function () {
@@ -18,17 +17,29 @@ const ContactUs = function () {
         </p>
 
         <div className="footer-links">
-          <Link href="https://twitter.com/ChroneCompany?s=20&t=NT3KIimij5V9FdcfCYSehQ">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/ChroneCompany?s=20&t=NT3KIimij5V9FdcfCYSehQ"
+          >
             <FaTwitterSquare />
-          </Link>
+          </a>
 
-          <Link href="https://www.instagram.com/chronecompany/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.instagram.com/chronecompany/"
+          >
             <FaInstagramSquare />
-          </Link>
+          </a>
 
-          <Link href="https://www.linkedin.com/in/chrone-company-78b85824b">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/chrone-company-78b85824b"
+          >
             <FaLinkedin />
-          </Link>
+          </a>
         </div>
       </div>
     </section>
