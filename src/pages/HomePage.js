@@ -7,25 +7,25 @@ import BookSession from '../components/HomePageContent/BookSession';
 import ServicesWeOffer from '../components/HomePageContent/ServicesWeOffer';
 import LastSection from '../components/HomePageContent/LastSection';
 import { Link } from 'react-router-dom';
-import EventPopup from '../components/ExtraFeatures/EventPopup';
-import { useEffect, useState } from 'react';
+// import EventPopup from '../components/ExtraFeatures/EventPopup';
+// import { useEffect, useState } from 'react';
 
 const HomePage = function () {
-  const [eventContent, setEventContent] = useState(null);
+  // const [eventContent, setEventContent] = useState(null);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setEventContent(<EventPopup />);
-    }, 5000);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setEventContent(<EventPopup />);
+  //   }, 5000);
 
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timeout);
+  //   };
+  // }, []);
 
   return (
     <>
-      {eventContent}
+      {/* {eventContent} */}
 
       <Hero />
 
