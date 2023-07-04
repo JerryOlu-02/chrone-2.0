@@ -85,3 +85,19 @@
     font-weight: 500;
   }
 }
+
+@media (max-width: 500px) {
+  .text-input-div {
+    flex-direction: column;
+
+    aside {
+      width: 100%;
+    }
+  }
+
+  .checkbox-div {
+    p {
+      font-size: 14px;
+    }
+  }
+}

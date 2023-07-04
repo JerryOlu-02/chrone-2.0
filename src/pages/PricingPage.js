@@ -1,3 +1,4 @@
+import Footer from '../components/Footer/Footer';
 import ExploreFeatures from '../components/PricingPageContent/ExploreFeatures';
 import FaqList from '../components/PricingPageContent/FaqList';
 import HeroPricing from '../components/PricingPageContent/HeroPricing';
@@ -16,6 +17,8 @@ const PricingPage = function () {
       <FaqList />
 
       <OnlinePresence />
+
+      <Footer />
     </>
   );
 };

@@ -7,6 +7,7 @@ import BookSession from '../components/HomePageContent/BookSession';
 import ServicesWeOffer from '../components/HomePageContent/ServicesWeOffer';
 import LastSection from '../components/HomePageContent/LastSection';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer/Footer';
 // import EventPopup from '../components/ExtraFeatures/EventPopup';
 // import { useEffect, useState } from 'react';
 
@@ -48,6 +49,8 @@ const HomePage = function () {
       <ServicesWeOffer />
 
       <LastSection />
+
+      <Footer />
     </>
   );
 };

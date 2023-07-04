@@ -1,0 +1,29 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.copyright {
+  @include padding-full;
+  @include flex-col;
+  align-items: center;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  font-size: 16px;
+  gap: 30px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #263238;
+
+  p:first-of-type {
+    font-weight: $light-weight;
+  }
+
+  p:last-of-type {
+    font-weight: $medium-weight;
+  }
+}
+
+@media (max-width: 500px) {
+  .copyright {
+    font-size: 16px;
+  }
+}

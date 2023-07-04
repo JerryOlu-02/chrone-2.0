@@ -18,7 +18,7 @@ const SiteMap = function () {
         </li>
 
         <li>
-          <Link to="/">About</Link>
+          <Link to="about">About</Link>
         </li>
         <li>
           <Link to="/privacy-policy">Privacy Policy</Link>

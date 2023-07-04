@@ -10,6 +10,7 @@ import ScheduleSuccess from './components/StrategyPageContent/Hero/ScheduleSucce
 import GetStartedPage from './pages/GetStartedPage';
 import PrivacyPage from './pages/PrivacyPage';
 import DemoPage from './pages/DemoPage';
+import AboutPage from './pages/AboutPage';
 
 const App = function () {
   const router = createBrowserRouter([
@@ -59,6 +60,11 @@ const App = function () {
         {
           path: 'demo',
           element: <DemoPage />,
+        },
+
+        {
+          path: 'about',
+          element: <AboutPage />,
         },
       ],
     },

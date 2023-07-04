@@ -6,6 +6,7 @@ import MarkertingForm from '../components/StrategyPageContent/MarketingForm/Mark
 import PartnerUs from '../components/StrategyPageContent/PartnerUs';
 import Button from '../ReusableComponents/Button';
 import ReusableCard from '../ReusableComponents/ReusableCard';
+import Footer from '../components/Footer/Footer';
 
 const StrategyPage = function () {
   const partnerUsRef = createRef();
@@ -35,6 +36,8 @@ const StrategyPage = function () {
       <PartnerUs ref={partnerUsRef} />
 
       <LastContainer />
+
+      <Footer />
     </>
   );
 };
