@@ -7,7 +7,7 @@ import { createClient } from '@supabase/supabase-js';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 
 const supabase = createClient(
-  'https://csjklqqvdrjnqlkxkkmd.supabase.co',
+  'https://tgendczoqdvxofznqbre.supabase.co',
   process.env.REACT_APP_SUPABASE_PRIVATE_KEY
 );
 

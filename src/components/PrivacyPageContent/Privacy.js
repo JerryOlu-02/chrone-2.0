@@ -83,7 +83,7 @@ const Privacy = function () {
             infrastructure itself (for example, the duration of a page visit).
             <br />
             <span>Website</span> refers to Chrone Influitive Company, accessible
-            from chronecompany.com
+            from chronecompany.org
             <br />
             <span>You</span> means the individual accessing or using the
             Service, or the company, or other legal entity on behalf of which
@@ -506,11 +506,11 @@ const Privacy = function () {
             If you have any questions about this Privacy Policy, You can contact
             us:
             <br />
-            By email: admin@chronecompany.com
+            By email: admin@chronecompany.org
             <br />
             By visiting this page on our website:{' '}
-            <a href="https://www.chronecompany.com/strategy">
-              chronecompany.com
+            <a href="https://www.chronecompany.org/strategy">
+              chronecompany.org
             </a>
           </p>
         </div>
