@@ -11,7 +11,7 @@ const Privacy = function () {
       <div className="privacy-content">
         <div>
           <h3>Chrone Privacy Policy</h3>
-          <p>Last updated: May 14, 2023</p>
+          <p>Last updated: November 5, 2024</p>
           <p>
             This Privacy Policy describes how we collect, receive, use, store,
             share, transfer, and process your Personal Data. It also describes
